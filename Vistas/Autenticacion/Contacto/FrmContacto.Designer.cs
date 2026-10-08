@@ -1,4 +1,4 @@
-namespace Sistema_Biblioteca.auth.Contacto;
+namespace Sistema_Biblioteca.Vistas.Autenticacion.Contacto;
 
 partial class FrmContacto
 {

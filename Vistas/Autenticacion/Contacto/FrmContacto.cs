@@ -1,4 +1,4 @@
-namespace Sistema_Biblioteca.auth.Contacto;
+namespace Sistema_Biblioteca.Vistas.Autenticacion.Contacto;
 
 using System;
 using MaterialSkin;
@@ -10,11 +10,11 @@ public partial class FrmContacto : MaterialForm
     {
         InitializeComponent();
 
-        // Vincula el formulario al gestor de temas global (hereda la paleta azul e índigo)
+        // Registrar el formulario en el gestor de temas
         var materialSkinManager = MaterialSkinManager.Instance;
         materialSkinManager.AddFormToManage(this);
 
-        // Ajustes típicos para una ventana modal
+        // Ajustes de ventana modal
         this.MaximizeBox = false;
         this.MinimizeBox = false;
         this.StartPosition = FormStartPosition.CenterParent;

@@ -1,5 +1,5 @@
-namespace Sistema_Biblioteca;
-using Sistema_Biblioteca.auth.Contacto;
+namespace Sistema_Biblioteca.Vistas.Autenticacion;
+using Sistema_Biblioteca.Vistas.Autenticacion.Contacto;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -7,14 +7,13 @@ using System.IO;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
-public partial class Form1 : MaterialForm
+public partial class FrmLogin : MaterialForm
 {
-    public Form1()
+    public FrmLogin()
     {
         InitializeComponent();
 
-        //posicion y ajuste de resolucion
-        // Ajustes típicos para una ventana modal
+        // Posición y ajustes básicos de la ventana
         this.MaximizeBox = false;
         this.MinimizeBox = true;
         this.StartPosition = FormStartPosition.CenterParent;
@@ -22,10 +21,10 @@ public partial class Form1 : MaterialForm
         var materialSkinManager = MaterialSkinManager.Instance;
         materialSkinManager.AddFormToManage(this);
 
-        // Mantenemos el tema claro para el contraste de lectura
+        // Tema claro por defecto
         materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
 
-        // Paleta basada en el Azul Marino Institucional y Rojo Antorcha del Colegio Tilburg
+        // Paleta de colores institucional
         materialSkinManager.ColorScheme = new ColorScheme(
             Primary.Indigo800,   // Azul principal para la barra superior
             Primary.Indigo900,   // Azul marino más profundo
@@ -35,61 +34,57 @@ public partial class Form1 : MaterialForm
         );
     }
 
-    private void Form1_Load(object sender, EventArgs e)
+    private void FrmLogin_Load(object sender, EventArgs e)
     {
-        // Rutas basadas en tu carpeta 'resources'
+        // Obtener las rutas de los iconos
         string rutaOjoAbierto = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "resources", "ojo.png");
         string rutaOjoCerrado = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "resources", "ojo cerrado.png");
 
-        // 1. Ocultar el texto por defecto (modo contraseña)
-        txtcontraseña.UseSystemPasswordChar = true;
+        // Ocultar la contraseña
+        txtContrasena.UseSystemPasswordChar = true;
 
-        // 2. Cargar el icono inicial si el archivo existe
+        // Cargar el icono inicial
         if (File.Exists(rutaOjoCerrado))
         {
-            txtcontraseña.TrailingIcon = Image.FromFile(rutaOjoCerrado);
+            txtContrasena.TrailingIcon = Image.FromFile(rutaOjoCerrado);
         }
 
-        // 3. Evento al hacer clic sobre el icono dentro del campo
-        txtcontraseña.TrailingIconClick += (s, args) =>
+        // Alternar la visibilidad de la contraseña
+        txtContrasena.TrailingIconClick += (s, args) =>
         {
-            // Alternamos el estado de visibilidad
-            txtcontraseña.UseSystemPasswordChar = !txtcontraseña.UseSystemPasswordChar;
+            txtContrasena.UseSystemPasswordChar = !txtContrasena.UseSystemPasswordChar;
 
-            // Cambiamos el icono según el estado
-            if (txtcontraseña.UseSystemPasswordChar)
+            if (txtContrasena.UseSystemPasswordChar)
             {
                 if (File.Exists(rutaOjoCerrado))
-                    txtcontraseña.TrailingIcon = Image.FromFile(rutaOjoCerrado);
+                    txtContrasena.TrailingIcon = Image.FromFile(rutaOjoCerrado);
             }
             else
             {
                 if (File.Exists(rutaOjoAbierto))
-                    txtcontraseña.TrailingIcon = Image.FromFile(rutaOjoAbierto);
+                    txtContrasena.TrailingIcon = Image.FromFile(rutaOjoAbierto);
             }
         };
     }
 
-    private void materialCard1_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+    private void cardLogin_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
     {
 
     }
 
-    private void linkLabel1_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
+    private void lnkContacto_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
     {
-        using (var modal = new Sistema_Biblioteca.auth.Contacto.FrmContacto())
+        using (var modal = new FrmContacto())
         {
             modal.ShowDialog(this);
         }
     }
 
-    private void materialButton1_Click(object sender, System.EventArgs e)
+    private void btnIngresar_Click(object sender, System.EventArgs e)
     {
-        // 1. Obtenemos el texto limpio (sin espacios extras a los lados)
-        string correo = txtcorreo.Text.Trim();
-        string contraseña = txtcontraseña.Text.Trim();
+        string correo = txtCorreo.Text.Trim();
+        string contraseña = txtContrasena.Text.Trim();
 
-        // 2. Validamos que NINGUNO de los dos campos esté vacío
         if (string.IsNullOrWhiteSpace(correo) || string.IsNullOrWhiteSpace(contraseña))
         {
             MessageBox.Show(

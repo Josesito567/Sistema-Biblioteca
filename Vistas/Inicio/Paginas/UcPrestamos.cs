@@ -1,4 +1,4 @@
-namespace Sistema_Biblioteca.home.views;
+namespace Sistema_Biblioteca.Vistas.Inicio.Paginas;
 
 using System.Windows.Forms;
 

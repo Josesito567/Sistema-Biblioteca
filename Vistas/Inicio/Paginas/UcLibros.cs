@@ -1,4 +1,4 @@
-namespace Sistema_Biblioteca.home.views; // 👈 Debe coincidir con la estructura de carpetas
+namespace Sistema_Biblioteca.Vistas.Inicio.Paginas;
 
 using System.Windows.Forms;
 

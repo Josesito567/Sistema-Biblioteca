@@ -1,20 +1,20 @@
-namespace Sistema_Biblioteca.home;
+namespace Sistema_Biblioteca.Vistas.Inicio;
 
 using System;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
-using Sistema_Biblioteca.home.views;
+using Sistema_Biblioteca.Vistas.Inicio.Paginas;
 
-public partial class Inicio : MaterialForm
+public partial class FrmInicio : MaterialForm
 {
     private bool estaCerrandoSesion = false;
 
-    public Inicio()
+    public FrmInicio()
     {
         InitializeComponent();
 
-        // 1. Configuración del gestor de temas MaterialSkin
+        // Configuración del gestor de temas
         var materialSkinManager = MaterialSkinManager.Instance;
         materialSkinManager.AddFormToManage(this);
 
@@ -27,7 +27,7 @@ public partial class Inicio : MaterialForm
             TextShade.WHITE      // Texto blanco sobre barra
         );
 
-        // 2. Control de estado de la ventana
+        // Parámetros de la ventana
         this.MaximizeBox = true;
         this.MinimizeBox = true;
         this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -38,20 +38,18 @@ public partial class Inicio : MaterialForm
             this.MinimumSize = Screen.PrimaryScreen.WorkingArea.Size;
         }
 
-        // 3. Eventos de navegación del Sidebar
-        this.btnHome.Click += (s, e) => CambiarEstiloBotonYVista(btnHome, new UcLibros());
-        this.btnPublisher.Click += (s, e) => CambiarEstiloBotonYVista(btnPublisher, new UcPrestamos());
-        this.btnAuthors.Click += (s, e) => CambiarEstiloBotonYVista(btnAuthors, new UcPrestamos()); // Reemplazar por UcAuthors al crearlo
+        // Eventos de navegación del menú lateral
+        this.btnInicio.Click += (s, e) => CambiarVista(btnInicio, new UcLibros());
+        this.btnEditoriales.Click += (s, e) => CambiarVista(btnEditoriales, new UcPrestamos());
+        btnAutores.Click += (s, e) => CambiarVista(btnAutores, new UcPrestamos());
         this.btnCerrarSesion.Click += BtnCerrarSesion_Click;
 
-        // 4. Suscribir evento de cierre para controlar la salida
-        this.FormClosing += Inicio_FormClosing;
+        // Suscribir evento de cierre para confirmar salida
+        this.FormClosing += FrmInicio_FormClosing;
 
-        // Cargar vista por defecto al iniciar
-        CambiarEstiloBotonYVista(btnHome, new UcLibros());
+        CambiarVista(btnInicio, new UcLibros());
     }
 
-    // Cambia la vista del panel contenedor y resalta el botón activo
     private void CargarVista(UserControl vista)
     {
         pnlContenido.Controls.Clear();
@@ -61,11 +59,11 @@ public partial class Inicio : MaterialForm
         vista.BringToFront();
     }
 
-    private void CambiarEstiloBotonYVista(MaterialButton botonActivo, UserControl vista)
+    private void CambiarVista(MaterialButton botonActivo, UserControl vista)
     {
-        btnHome.Type = MaterialButton.MaterialButtonType.Outlined;
-        btnPublisher.Type = MaterialButton.MaterialButtonType.Outlined;
-        btnAuthors.Type = MaterialButton.MaterialButtonType.Outlined;
+        btnInicio.Type = MaterialButton.MaterialButtonType.Outlined;
+        btnEditoriales.Type = MaterialButton.MaterialButtonType.Outlined;
+        btnAutores.Type = MaterialButton.MaterialButtonType.Outlined;
 
         botonActivo.Type = MaterialButton.MaterialButtonType.Contained;
         CargarVista(vista);
@@ -83,12 +81,12 @@ public partial class Inicio : MaterialForm
         if (respuesta == DialogResult.Yes)
         {
             estaCerrandoSesion = true;
-            this.DialogResult = DialogResult.OK; // Opcional para notificar retorno
-            this.Close(); // Invoca el evento FormClosing de manera controlada
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 
-    private void Inicio_FormClosing(object? sender, FormClosingEventArgs e)
+    private void FrmInicio_FormClosing(object? sender, FormClosingEventArgs e)
     {
         // Si el usuario presiona la "X" directamente sin pulsar "Cerrar Sesión"
         if (!estaCerrandoSesion && e.CloseReason == CloseReason.UserClosing)
@@ -106,7 +104,7 @@ public partial class Inicio : MaterialForm
             }
             else
             {
-                Application.Exit(); // Cierra todo el proceso limpiamente
+                Application.Exit();
             }
         }
     }
