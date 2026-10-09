@@ -39,15 +39,14 @@ public partial class FrmInicio : MaterialForm
         }
 
         // Eventos de navegación del menú lateral
-        this.btnInicio.Click += (s, e) => CambiarVista(btnInicio, new UcLibros());
-        this.btnEditoriales.Click += (s, e) => CambiarVista(btnEditoriales, new UcPrestamos());
-        btnAutores.Click += (s, e) => CambiarVista(btnAutores, new UcPrestamos());
+        this.btnLibros.Click += (s, e) => CambiarVista(btnLibros, new UcLibros());
+        this.btnAyuda.Click += (s, e) => CambiarVista(btnAyuda, new UcAyuda());
         this.btnCerrarSesion.Click += BtnCerrarSesion_Click;
 
         // Suscribir evento de cierre para confirmar salida
         this.FormClosing += FrmInicio_FormClosing;
 
-        CambiarVista(btnInicio, new UcLibros());
+        CambiarVista(btnLibros, new UcLibros());
     }
 
     private void CargarVista(UserControl vista)
@@ -61,9 +60,8 @@ public partial class FrmInicio : MaterialForm
 
     private void CambiarVista(MaterialButton botonActivo, UserControl vista)
     {
-        btnInicio.Type = MaterialButton.MaterialButtonType.Outlined;
-        btnEditoriales.Type = MaterialButton.MaterialButtonType.Outlined;
-        btnAutores.Type = MaterialButton.MaterialButtonType.Outlined;
+        btnLibros.Type = MaterialButton.MaterialButtonType.Outlined;
+        btnAyuda.Type = MaterialButton.MaterialButtonType.Outlined;
 
         botonActivo.Type = MaterialButton.MaterialButtonType.Contained;
         CargarVista(vista);

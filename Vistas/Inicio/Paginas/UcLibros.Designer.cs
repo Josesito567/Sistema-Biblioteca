@@ -16,53 +16,87 @@ partial class UcLibros
 
     private void InitializeComponent()
     {
-        this.lblTitulo = new MaterialSkin.Controls.MaterialLabel();
-        this.lblSubtitulo = new MaterialSkin.Controls.MaterialLabel();
+        this.pnlNavegacionLibros = new System.Windows.Forms.Panel();
+        this.btnEditoriales = new MaterialSkin.Controls.MaterialButton();
+        this.btnCategorias = new MaterialSkin.Controls.MaterialButton();
+        this.btnLibros = new MaterialSkin.Controls.MaterialButton();
+        this.btnAutores = new MaterialSkin.Controls.MaterialButton();
+        this.pnlContenidoLibros = new System.Windows.Forms.Panel();
+        this.pnlNavegacionLibros.SuspendLayout();
         this.SuspendLayout();
 
         // 
-        // lblTitulo
+        // pnlNavegacionLibros
         // 
-        this.lblTitulo.AutoSize = true;
-        this.lblTitulo.Depth = 0;
-        this.lblTitulo.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-        this.lblTitulo.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-        this.lblTitulo.Location = new System.Drawing.Point(25, 25);
-        this.lblTitulo.MouseState = MaterialSkin.MouseState.HOVER;
-        this.lblTitulo.Name = "lblTitulo";
-        this.lblTitulo.Size = new System.Drawing.Size(262, 29);
-        this.lblTitulo.TabIndex = 0;
-        this.lblTitulo.Text = "Catálogo General de Libros";
+        this.pnlNavegacionLibros.Controls.Add(this.btnEditoriales);
+        this.pnlNavegacionLibros.Controls.Add(this.btnCategorias);
+        this.pnlNavegacionLibros.Controls.Add(this.btnLibros);
+        this.pnlNavegacionLibros.Controls.Add(this.btnAutores);
+        this.pnlNavegacionLibros.Dock = System.Windows.Forms.DockStyle.Top;
+        this.pnlNavegacionLibros.Location = new System.Drawing.Point(0, 0);
+        this.pnlNavegacionLibros.Name = "pnlNavegacionLibros";
+        this.pnlNavegacionLibros.Size = new System.Drawing.Size(700, 52);
+        this.pnlNavegacionLibros.TabIndex = 0;
 
         // 
-        // lblSubtitulo
+        // botones de navegación interna
         // 
-        this.lblSubtitulo.AutoSize = true;
-        this.lblSubtitulo.Depth = 0;
-        this.lblSubtitulo.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-        this.lblSubtitulo.FontType = MaterialSkin.MaterialSkinManager.fontType.Body1;
-        this.lblSubtitulo.Location = new System.Drawing.Point(26, 60);
-        this.lblSubtitulo.MouseState = MaterialSkin.MouseState.HOVER;
-        this.lblSubtitulo.Name = "lblSubtitulo";
-        this.lblSubtitulo.Size = new System.Drawing.Size(325, 19);
-        this.lblSubtitulo.TabIndex = 1;
-        this.lblSubtitulo.Text = "Gestión de inventario y consulta de ejemplares";
+        this.btnEditoriales.AutoSize = false;
+        this.btnEditoriales.Location = new System.Drawing.Point(12, 6);
+        this.btnEditoriales.Size = new System.Drawing.Size(145, 40);
+        this.btnEditoriales.Text = "Editoriales";
+        this.btnEditoriales.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+        this.btnEditoriales.UseVisualStyleBackColor = true;
+
+        this.btnCategorias.AutoSize = false;
+        this.btnCategorias.Location = new System.Drawing.Point(164, 6);
+        this.btnCategorias.Size = new System.Drawing.Size(145, 40);
+        this.btnCategorias.Text = "Categorías";
+        this.btnCategorias.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+        this.btnCategorias.UseVisualStyleBackColor = true;
+
+        this.btnLibros.AutoSize = false;
+        this.btnLibros.Location = new System.Drawing.Point(316, 6);
+        this.btnLibros.Size = new System.Drawing.Size(145, 40);
+        this.btnLibros.Text = "Libros";
+        this.btnLibros.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+        this.btnLibros.UseVisualStyleBackColor = true;
+
+        this.btnAutores.AutoSize = false;
+        this.btnAutores.Location = new System.Drawing.Point(468, 6);
+        this.btnAutores.Size = new System.Drawing.Size(145, 40);
+        this.btnAutores.Text = "Autores";
+        this.btnAutores.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+        this.btnAutores.UseVisualStyleBackColor = true;
+
+        // 
+        // pnlContenidoLibros
+        // 
+        this.pnlContenidoLibros.Dock = System.Windows.Forms.DockStyle.Fill;
+        this.pnlContenidoLibros.Location = new System.Drawing.Point(0, 52);
+        this.pnlContenidoLibros.Name = "pnlContenidoLibros";
+        this.pnlContenidoLibros.Size = new System.Drawing.Size(700, 448);
+        this.pnlContenidoLibros.TabIndex = 1;
 
         // 
         // UcLibros
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.Controls.Add(this.lblSubtitulo);
-        this.Controls.Add(this.lblTitulo);
+        this.Controls.Add(this.pnlContenidoLibros);
+        this.Controls.Add(this.pnlNavegacionLibros);
         this.Name = "UcLibros";
         this.Size = new System.Drawing.Size(700, 500);
+        this.pnlNavegacionLibros.ResumeLayout(false);
         this.ResumeLayout(false);
-        this.PerformLayout();
     }
 
     #endregion
 
-    private MaterialSkin.Controls.MaterialLabel lblTitulo;
-    private MaterialSkin.Controls.MaterialLabel lblSubtitulo;
+    private System.Windows.Forms.Panel pnlNavegacionLibros;
+    private MaterialSkin.Controls.MaterialButton btnEditoriales;
+    private MaterialSkin.Controls.MaterialButton btnCategorias;
+    private MaterialSkin.Controls.MaterialButton btnLibros;
+    private MaterialSkin.Controls.MaterialButton btnAutores;
+    private System.Windows.Forms.Panel pnlContenidoLibros;
 }
