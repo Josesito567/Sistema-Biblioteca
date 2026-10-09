@@ -88,9 +88,9 @@ public partial class FrmLogin : MaterialForm
         if (string.IsNullOrWhiteSpace(correo) || string.IsNullOrWhiteSpace(contraseña))
         {
             MessageBox.Show(
-                "Por favor, complete todos los campos para ingresar.", 
-                "Campos Requeridos", 
-                MessageBoxButtons.OK, 
+                "Por favor, complete todos los campos para ingresar.",
+                "Campos Requeridos",
+                MessageBoxButtons.OK,
                 MessageBoxIcon.Warning
             );
             return; // Detenemos la ejecución aquí
@@ -99,6 +99,11 @@ public partial class FrmLogin : MaterialForm
         // 3. Si ambos campos tienen texto, otorgamos el OK y cerramos
         this.DialogResult = DialogResult.OK;
         this.Close();
-        
+
+    }
+
+    private void txtContrasena_Click(object sender, EventArgs e)
+    {
+
     }
 }
