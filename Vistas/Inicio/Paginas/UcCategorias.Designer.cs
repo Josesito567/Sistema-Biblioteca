@@ -17,21 +17,56 @@ partial class UcCategorias
     {
         lblTitulo = new MaterialSkin.Controls.MaterialLabel();
         lblDescripcion = new MaterialSkin.Controls.MaterialLabel();
+        dataGridView1 = new DataGridView();
+        ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
         SuspendLayout();
+        // 
+        // lblTitulo
+        // 
         lblTitulo.AutoSize = true;
+        lblTitulo.Depth = 0;
+        lblTitulo.Font = new Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
         lblTitulo.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-        lblTitulo.Location = new System.Drawing.Point(25, 25);
+        lblTitulo.Location = new Point(25, 25);
+        lblTitulo.MouseState = MaterialSkin.MouseState.HOVER;
+        lblTitulo.Name = "lblTitulo";
+        lblTitulo.Size = new Size(117, 29);
+        lblTitulo.TabIndex = 1;
         lblTitulo.Text = "Categorías";
+        // 
+        // lblDescripcion
+        // 
         lblDescripcion.AutoSize = true;
-        lblDescripcion.Location = new System.Drawing.Point(26, 65);
+        lblDescripcion.Depth = 0;
+        lblDescripcion.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+        lblDescripcion.Location = new Point(26, 65);
+        lblDescripcion.MouseState = MaterialSkin.MouseState.HOVER;
+        lblDescripcion.Name = "lblDescripcion";
+        lblDescripcion.Size = new Size(221, 19);
+        lblDescripcion.TabIndex = 0;
         lblDescripcion.Text = "Panel de gestión de categorías.";
+        // 
+        // dataGridView1
+        // 
+        dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dataGridView1.Location = new Point(26, 87);
+        dataGridView1.Name = "dataGridView1";
+        dataGridView1.Size = new Size(668, 271);
+        dataGridView1.TabIndex = 2;
+        // 
+        // UcCategorias
+        // 
+        Controls.Add(dataGridView1);
         Controls.Add(lblDescripcion);
         Controls.Add(lblTitulo);
         Name = "UcCategorias";
+        Size = new Size(718, 387);
+        ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
 
     private MaterialSkin.Controls.MaterialLabel lblTitulo;
     private MaterialSkin.Controls.MaterialLabel lblDescripcion;
+    private DataGridView dataGridView1;
 }

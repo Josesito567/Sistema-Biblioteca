@@ -17,8 +17,8 @@ partial class UcEditoriales
     {
         lblTitulo = new MaterialSkin.Controls.MaterialLabel();
         lblDescripcion = new MaterialSkin.Controls.MaterialLabel();
-        dataGridView1 = new DataGridView();
-        ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+        dgvEditoriales = new DataGridView();
+        ((System.ComponentModel.ISupportInitialize)dgvEditoriales).BeginInit();
         SuspendLayout();
         // 
         // lblTitulo
@@ -46,29 +46,29 @@ partial class UcEditoriales
         lblDescripcion.TabIndex = 0;
         lblDescripcion.Text = "Panel de gestión de editoriales.";
         // 
-        // dataGridView1
+        // dgvEditoriales
         // 
-        dataGridView1.AccessibleDescription = "DgvTablaEditorial";
-        dataGridView1.BackgroundColor = Color.White;
-        dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dataGridView1.Location = new Point(25, 131);
-        dataGridView1.Name = "dataGridView1";
-        dataGridView1.Size = new Size(595, 255);
-        dataGridView1.TabIndex = 2;
+        dgvEditoriales.AccessibleDescription = "dgvEditoriales";
+        dgvEditoriales.BackgroundColor = Color.White;
+        dgvEditoriales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dgvEditoriales.Location = new Point(25, 103);
+        dgvEditoriales.Name = "dgvEditoriales";
+        dgvEditoriales.Size = new Size(1202, 416);
+        dgvEditoriales.TabIndex = 2;
         // 
         // UcEditoriales
         // 
-        Controls.Add(dataGridView1);
+        Controls.Add(dgvEditoriales);
         Controls.Add(lblDescripcion);
         Controls.Add(lblTitulo);
         Name = "UcEditoriales";
-        Size = new Size(650, 433);
-        ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+        Size = new Size(1248, 625);
+        ((System.ComponentModel.ISupportInitialize)dgvEditoriales).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
 
     private MaterialSkin.Controls.MaterialLabel lblTitulo;
     private MaterialSkin.Controls.MaterialLabel lblDescripcion;
-    private DataGridView dataGridView1;
+    private DataGridView dgvEditoriales;
 }
