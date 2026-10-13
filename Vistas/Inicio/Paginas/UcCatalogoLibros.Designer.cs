@@ -49,10 +49,11 @@ partial class UcCatalogoLibros
         // dgvCatalogoLibros
         // 
         dgvCatalogoLibros.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+        dgvCatalogoLibros.BackgroundColor = Color.White;
         dgvCatalogoLibros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvCatalogoLibros.Location = new Point(26, 87);
         dgvCatalogoLibros.Name = "dgvCatalogoLibros";
-        dgvCatalogoLibros.Size = new Size(668, 271);
+        dgvCatalogoLibros.Size = new Size(879, 460);
         dgvCatalogoLibros.TabIndex = 2;
         // 
         // UcCatalogoLibros
@@ -61,7 +62,7 @@ partial class UcCatalogoLibros
         Controls.Add(lblDescripcion);
         Controls.Add(lblTitulo);
         Name = "UcCatalogoLibros";
-        Size = new Size(1899, 971);
+        Size = new Size(934, 573);
         ((System.ComponentModel.ISupportInitialize)dgvCatalogoLibros).EndInit();
         ResumeLayout(false);
         PerformLayout();

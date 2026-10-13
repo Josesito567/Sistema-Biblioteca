@@ -49,10 +49,11 @@ partial class UcAutores
         // dgvAutores
         // 
         dgvAutores.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+        dgvAutores.BackgroundColor = Color.White;
         dgvAutores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dgvAutores.Location = new Point(26, 87);
+        dgvAutores.Location = new Point(25, 87);
         dgvAutores.Name = "dgvAutores";
-        dgvAutores.Size = new Size(1978, 904);
+        dgvAutores.Size = new Size(1020, 480);
         dgvAutores.TabIndex = 2;
         // 
         // UcAutores
@@ -61,7 +62,7 @@ partial class UcAutores
         Controls.Add(lblDescripcion);
         Controls.Add(lblTitulo);
         Name = "UcAutores";
-        Size = new Size(1460, 783);
+        Size = new Size(1070, 624);
         ((System.ComponentModel.ISupportInitialize)dgvAutores).EndInit();
         ResumeLayout(false);
         PerformLayout();

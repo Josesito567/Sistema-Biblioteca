@@ -51,10 +51,11 @@ partial class UcPrestamos
         // dgvPrestamos
         // 
         dgvPrestamos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+        dgvPrestamos.BackgroundColor = Color.White;
         dgvPrestamos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dgvPrestamos.Location = new Point(26, 87);
+        dgvPrestamos.Location = new Point(26, 82);
         dgvPrestamos.Name = "dgvPrestamos";
-        dgvPrestamos.Size = new Size(668, 271);
+        dgvPrestamos.Size = new Size(777, 439);
         dgvPrestamos.TabIndex = 2;
         // 
         // UcPrestamos
@@ -65,7 +66,7 @@ partial class UcPrestamos
         Controls.Add(dgvPrestamos);
         Controls.Add(lblTitulo);
         Name = "UcPrestamos";
-        Size = new Size(1897, 972);
+        Size = new Size(838, 550);
         ((System.ComponentModel.ISupportInitialize)dgvPrestamos).EndInit();
         ResumeLayout(false);
         PerformLayout();
