@@ -7,5 +7,11 @@ public partial class UcPrestamos : UserControl
     public UcPrestamos()
     {
         InitializeComponent();
+        CargarPrestamosEnLaTabla();
+    }
+
+    private void CargarPrestamosEnLaTabla()
+    {
+        dgvPrestamos.DataSource = Sistema_Biblioteca.Controladores.PrestamosControlador.GetAll();
     }
 }

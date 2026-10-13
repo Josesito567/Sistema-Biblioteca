@@ -7,5 +7,11 @@ public partial class UcCategorias : UserControl
     public UcCategorias()
     {
         InitializeComponent();
+        CargarCategoriasEnLaTabla();
+    }
+
+    private void CargarCategoriasEnLaTabla()
+    {
+        dataGridView1.DataSource = Sistema_Biblioteca.Controladores.CategoriasControlador.GetAll();
     }
 }

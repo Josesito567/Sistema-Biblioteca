@@ -17,53 +17,63 @@ partial class UcPrestamos
 
     private void InitializeComponent()
     {
-        this.lblTitulo = new MaterialSkin.Controls.MaterialLabel();
-        this.lblSubtitulo = new MaterialSkin.Controls.MaterialLabel();
-        this.SuspendLayout();
-
+        lblTitulo = new MaterialSkin.Controls.MaterialLabel();
+        lblSubtitulo = new MaterialSkin.Controls.MaterialLabel();
+        dgvPrestamos = new DataGridView();
+        ((System.ComponentModel.ISupportInitialize)dgvPrestamos).BeginInit();
+        SuspendLayout();
         // 
         // lblTitulo
         // 
-        this.lblTitulo.AutoSize = true;
-        this.lblTitulo.Depth = 0;
-        this.lblTitulo.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-        this.lblTitulo.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-        this.lblTitulo.Location = new System.Drawing.Point(25, 25);
-        this.lblTitulo.MouseState = MaterialSkin.MouseState.HOVER;
-        this.lblTitulo.Name = "lblTitulo";
-        this.lblTitulo.Size = new System.Drawing.Size(341, 29);
-        this.lblTitulo.TabIndex = 0;
-        this.lblTitulo.Text = "Control de Préstamos y Devoluciones";
-
+        lblTitulo.AutoSize = true;
+        lblTitulo.Depth = 0;
+        lblTitulo.Font = new Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
+        lblTitulo.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+        lblTitulo.Location = new Point(25, 25);
+        lblTitulo.MouseState = MaterialSkin.MouseState.HOVER;
+        lblTitulo.Name = "lblTitulo";
+        lblTitulo.Size = new Size(403, 29);
+        lblTitulo.TabIndex = 0;
+        lblTitulo.Text = "Control de Préstamos y Devoluciones";
         // 
         // lblSubtitulo
         // 
-        this.lblSubtitulo.AutoSize = true;
-        this.lblSubtitulo.Depth = 0;
-        this.lblSubtitulo.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-        this.lblSubtitulo.FontType = MaterialSkin.MaterialSkinManager.fontType.Body1;
-        this.lblSubtitulo.Location = new System.Drawing.Point(26, 60);
-        this.lblSubtitulo.MouseState = MaterialSkin.MouseState.HOVER;
-        this.lblSubtitulo.Name = "lblSubtitulo";
-        this.lblSubtitulo.Size = new System.Drawing.Size(280, 19);
-        this.lblSubtitulo.TabIndex = 1;
-        this.lblSubtitulo.Text = "Registro de salidas y entregas de libros";
-
+        lblSubtitulo.AutoSize = true;
+        lblSubtitulo.Depth = 0;
+        lblSubtitulo.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+        lblSubtitulo.Location = new Point(26, 60);
+        lblSubtitulo.MouseState = MaterialSkin.MouseState.HOVER;
+        lblSubtitulo.Name = "lblSubtitulo";
+        lblSubtitulo.Size = new Size(276, 19);
+        lblSubtitulo.TabIndex = 1;
+        lblSubtitulo.Text = "Registro de salidas y entregas de libros";
+        // 
+        // dgvPrestamos
+        // 
+        dgvPrestamos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+        dgvPrestamos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dgvPrestamos.Location = new Point(26, 87);
+        dgvPrestamos.Name = "dgvPrestamos";
+        dgvPrestamos.Size = new Size(668, 271);
+        dgvPrestamos.TabIndex = 2;
         // 
         // UcPrestamos
         // 
-        this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.Controls.Add(this.lblSubtitulo);
-        this.Controls.Add(this.lblTitulo);
-        this.Name = "UcPrestamos";
-        this.Size = new System.Drawing.Size(700, 500);
-        this.ResumeLayout(false);
-        this.PerformLayout();
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        Controls.Add(lblSubtitulo);
+        Controls.Add(dgvPrestamos);
+        Controls.Add(lblTitulo);
+        Name = "UcPrestamos";
+        Size = new Size(1897, 972);
+        ((System.ComponentModel.ISupportInitialize)dgvPrestamos).EndInit();
+        ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
 
     private MaterialSkin.Controls.MaterialLabel lblTitulo;
     private MaterialSkin.Controls.MaterialLabel lblSubtitulo;
+    private DataGridView dgvPrestamos;
 }

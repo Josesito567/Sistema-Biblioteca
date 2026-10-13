@@ -7,5 +7,11 @@ public partial class UcAutores : UserControl
     public UcAutores()
     {
         InitializeComponent();
+        CargarAutoresEnLaTabla();
+    }
+
+    private void CargarAutoresEnLaTabla()
+    {
+        dgvAutores.DataSource = Sistema_Biblioteca.Controladores.AutoresControlador.GetAll();
     }
 }

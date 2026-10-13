@@ -7,5 +7,11 @@ public partial class UcCatalogoLibros : UserControl
     public UcCatalogoLibros()
     {
         InitializeComponent();
+        CargarCatalogoEnLaTabla();
+    }
+
+    private void CargarCatalogoEnLaTabla()
+    {
+        dgvCatalogoLibros.DataSource = Sistema_Biblioteca.Controladores.CatalogoLibrosControlador.GetAll();
     }
 }

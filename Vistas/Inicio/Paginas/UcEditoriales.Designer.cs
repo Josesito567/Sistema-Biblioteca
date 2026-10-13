@@ -49,6 +49,7 @@ partial class UcEditoriales
         // dgvEditoriales
         // 
         dgvEditoriales.AccessibleDescription = "dgvEditoriales";
+        dgvEditoriales.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         dgvEditoriales.BackgroundColor = Color.White;
         dgvEditoriales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvEditoriales.Location = new Point(25, 103);

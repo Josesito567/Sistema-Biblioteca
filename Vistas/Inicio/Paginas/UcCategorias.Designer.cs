@@ -48,6 +48,7 @@ partial class UcCategorias
         // 
         // dataGridView1
         // 
+        dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dataGridView1.Location = new Point(26, 87);
         dataGridView1.Name = "dataGridView1";
@@ -60,7 +61,7 @@ partial class UcCategorias
         Controls.Add(lblDescripcion);
         Controls.Add(lblTitulo);
         Name = "UcCategorias";
-        Size = new Size(718, 387);
+        Size = new Size(1593, 673);
         ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
         ResumeLayout(false);
         PerformLayout();
