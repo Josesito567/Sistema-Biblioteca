@@ -12,18 +12,20 @@ static class Program
     {
         ApplicationConfiguration.Initialize();
 
-        // Mostrar el formulario de acceso
-        using (var login = new FrmLogin())
+        while (true)
         {
-            var resultado = login.ShowDialog();
-
-            if (resultado != DialogResult.OK)
+            using (var login = new FrmLogin())
             {
-                return;
-            }
-        }
+                var resultado = login.ShowDialog();
 
-        // Iniciar la ventana principal
-        Application.Run(new FrmInicio());
+                if (resultado != DialogResult.OK)
+                {
+                    return;
+                }
+            }
+
+            using var inicio = new FrmInicio();
+            inicio.ShowDialog();
+        }
     }
 }

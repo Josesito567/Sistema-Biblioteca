@@ -1,6 +1,7 @@
 namespace Sistema_Biblioteca.Vistas.Inicio.Paginas;
 
 using System.Windows.Forms;
+using Sistema_Biblioteca.Estilos;
 
 public partial class UcAutores : UserControl
 {
@@ -13,5 +14,6 @@ public partial class UcAutores : UserControl
     private void CargarAutoresEnLaTabla()
     {
         dgvAutores.DataSource = Sistema_Biblioteca.Controladores.AutoresControlador.GetAll();
+        DataGridViewEstilo.Aplicar(dgvAutores, "id_autores");
     }
 }

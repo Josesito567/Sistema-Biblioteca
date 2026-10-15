@@ -53,7 +53,7 @@ partial class UcPrestamos
         dgvPrestamos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         dgvPrestamos.BackgroundColor = Color.White;
         dgvPrestamos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dgvPrestamos.Location = new Point(26, 82);
+        dgvPrestamos.Location = new Point(25, 87);
         dgvPrestamos.Name = "dgvPrestamos";
         dgvPrestamos.Size = new Size(777, 439);
         dgvPrestamos.TabIndex = 2;

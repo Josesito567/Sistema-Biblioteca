@@ -102,7 +102,8 @@ public partial class FrmInicio : MaterialForm
             }
             else
             {
-                Application.Exit();
+                estaCerrandoSesion = true;
+                this.DialogResult = DialogResult.OK;
             }
         }
     }

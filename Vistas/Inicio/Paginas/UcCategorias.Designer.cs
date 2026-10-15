@@ -51,7 +51,7 @@ partial class UcCategorias
         dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         dataGridView1.BackgroundColor = Color.White;
         dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dataGridView1.Location = new Point(26, 87);
+        dataGridView1.Location = new Point(25, 87);
         dataGridView1.Name = "dataGridView1";
         dataGridView1.Size = new Size(989, 512);
         dataGridView1.TabIndex = 2;

@@ -7,9 +7,26 @@ namespace Sistema_Biblioteca.Controladores;
 
 public static class CatalogoLibrosControlador
 {
-    public static List<CatalogoLibrosModelo> GetAll()
+    public static List<CatalogoLibrosListadoModelo> GetAll()
     {
         using var context = new LibraryContext();
-        return context.CatalogoLibros.ToList();
+
+        return (
+            from catalogo in context.CatalogoLibros
+            join libro in context.Libros
+                on catalogo.id_libros equals libro.id_libros
+            select new CatalogoLibrosListadoModelo
+            {
+                id_catalogolibros = catalogo.id_catalogolibros,
+                id_libros = catalogo.id_libros,
+                titulo = libro.titulo,
+                codigo_ejemplar = catalogo.codigo_ejemplar,
+                ubicacion_estante = catalogo.ubicacion_estante,
+                numero_edicion = catalogo.numero_edicion,
+                disponible = catalogo.disponible,
+                estado = catalogo.estado,
+                fecha_registro = catalogo.fecha_registro
+            }
+        ).ToList();
     }
 }

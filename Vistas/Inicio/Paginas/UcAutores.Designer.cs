@@ -53,7 +53,7 @@ partial class UcAutores
         dgvAutores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvAutores.Location = new Point(25, 87);
         dgvAutores.Name = "dgvAutores";
-        dgvAutores.Size = new Size(1020, 480);
+        dgvAutores.Size = new Size(1020, 493);
         dgvAutores.TabIndex = 2;
         // 
         // UcAutores

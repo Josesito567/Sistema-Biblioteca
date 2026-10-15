@@ -51,7 +51,7 @@ partial class UcCatalogoLibros
         dgvCatalogoLibros.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         dgvCatalogoLibros.BackgroundColor = Color.White;
         dgvCatalogoLibros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dgvCatalogoLibros.Location = new Point(26, 87);
+        dgvCatalogoLibros.Location = new Point(25, 87);
         dgvCatalogoLibros.Name = "dgvCatalogoLibros";
         dgvCatalogoLibros.Size = new Size(879, 460);
         dgvCatalogoLibros.TabIndex = 2;
