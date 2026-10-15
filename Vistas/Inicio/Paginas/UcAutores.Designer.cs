@@ -18,6 +18,7 @@ partial class UcAutores
         lblTitulo = new MaterialSkin.Controls.MaterialLabel();
         lblDescripcion = new MaterialSkin.Controls.MaterialLabel();
         dgvAutores = new DataGridView();
+        btnAuCrear = new MaterialSkin.Controls.MaterialButton();
         ((System.ComponentModel.ISupportInitialize)dgvAutores).BeginInit();
         SuspendLayout();
         // 
@@ -53,16 +54,37 @@ partial class UcAutores
         dgvAutores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvAutores.Location = new Point(25, 87);
         dgvAutores.Name = "dgvAutores";
-        dgvAutores.Size = new Size(1020, 493);
+        dgvAutores.Size = new Size(1774, 808);
         dgvAutores.TabIndex = 2;
+        // 
+        // btnAuCrear
+        // 
+        btnAuCrear.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+        btnAuCrear.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        btnAuCrear.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+        btnAuCrear.Depth = 0;
+        btnAuCrear.HighEmphasis = true;
+        btnAuCrear.Icon = null;
+        btnAuCrear.Location = new Point(1605, 42);
+        btnAuCrear.Margin = new Padding(4, 6, 4, 6);
+        btnAuCrear.MouseState = MaterialSkin.MouseState.HOVER;
+        btnAuCrear.Name = "btnAuCrear";
+        btnAuCrear.NoAccentTextColor = Color.Empty;
+        btnAuCrear.Size = new Size(121, 36);
+        btnAuCrear.TabIndex = 5;
+        btnAuCrear.Text = "Nuevo Autor";
+        btnAuCrear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+        btnAuCrear.UseAccentColor = false;
+        btnAuCrear.UseVisualStyleBackColor = true;
         // 
         // UcAutores
         // 
+        Controls.Add(btnAuCrear);
         Controls.Add(dgvAutores);
         Controls.Add(lblDescripcion);
         Controls.Add(lblTitulo);
         Name = "UcAutores";
-        Size = new Size(1070, 624);
+        Size = new Size(1824, 939);
         ((System.ComponentModel.ISupportInitialize)dgvAutores).EndInit();
         ResumeLayout(false);
         PerformLayout();
@@ -71,4 +93,5 @@ partial class UcAutores
     private MaterialSkin.Controls.MaterialLabel lblTitulo;
     private MaterialSkin.Controls.MaterialLabel lblDescripcion;
     private DataGridView dgvAutores;
+    private MaterialSkin.Controls.MaterialButton btnAuCrear;
 }
