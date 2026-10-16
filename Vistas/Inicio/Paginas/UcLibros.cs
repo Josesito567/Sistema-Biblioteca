@@ -30,4 +30,17 @@ public partial class UcLibros : UserControl
         pnlContenidoLibros.Controls.Add(vista);
         vista.BringToFront();
     }
+
+    private void btnLiCrear_Click(object sender, EventArgs e)
+    {
+        using (var modal = new Modales.NuevoLibro())
+        {
+            modal.ShowDialog(this);
+        }
+    }
+
+    private void btnAutores_Click(object sender, EventArgs e)
+    {
+
+    }
 }

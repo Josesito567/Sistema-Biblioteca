@@ -65,7 +65,7 @@ partial class UcAutores
         btnAuCrear.Depth = 0;
         btnAuCrear.HighEmphasis = true;
         btnAuCrear.Icon = null;
-        btnAuCrear.Location = new Point(1605, 42);
+        btnAuCrear.Location = new Point(1678, 42);
         btnAuCrear.Margin = new Padding(4, 6, 4, 6);
         btnAuCrear.MouseState = MaterialSkin.MouseState.HOVER;
         btnAuCrear.Name = "btnAuCrear";
@@ -76,6 +76,7 @@ partial class UcAutores
         btnAuCrear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
         btnAuCrear.UseAccentColor = false;
         btnAuCrear.UseVisualStyleBackColor = true;
+        btnAuCrear.Click += btnAuCrear_Click;
         // 
         // UcAutores
         // 

@@ -30,7 +30,7 @@
         {
             pnlNuevaEditorial = new Panel();
             btnGuardarAutor = new MaterialSkin.Controls.MaterialButton();
-            dtpRegistroEditorial = new DateTimePicker();
+            dtpRegistroAutor = new DateTimePicker();
             txtCiudadEAutor = new MaterialSkin.Controls.MaterialTextBox2();
             txtTelefonoAutor = new MaterialSkin.Controls.MaterialTextBox2();
             txtEmailAutor = new MaterialSkin.Controls.MaterialTextBox2();
@@ -42,7 +42,7 @@
             // 
             pnlNuevaEditorial.AccessibleName = "pnlNuevaEditorial";
             pnlNuevaEditorial.Controls.Add(btnGuardarAutor);
-            pnlNuevaEditorial.Controls.Add(dtpRegistroEditorial);
+            pnlNuevaEditorial.Controls.Add(dtpRegistroAutor);
             pnlNuevaEditorial.Controls.Add(txtCiudadEAutor);
             pnlNuevaEditorial.Controls.Add(txtTelefonoAutor);
             pnlNuevaEditorial.Controls.Add(txtEmailAutor);
@@ -73,13 +73,13 @@
             btnGuardarAutor.UseAccentColor = false;
             btnGuardarAutor.UseVisualStyleBackColor = true;
             // 
-            // dtpRegistroEditorial
+            // dtpRegistroAutor
             // 
-            dtpRegistroEditorial.AccessibleName = "dtpRegistroEditorial";
-            dtpRegistroEditorial.Location = new Point(24, 241);
-            dtpRegistroEditorial.Name = "dtpRegistroEditorial";
-            dtpRegistroEditorial.Size = new Size(406, 23);
-            dtpRegistroEditorial.TabIndex = 5;
+            dtpRegistroAutor.AccessibleName = "dtpRegistroAutor";
+            dtpRegistroAutor.Location = new Point(24, 241);
+            dtpRegistroAutor.Name = "dtpRegistroAutor";
+            dtpRegistroAutor.Size = new Size(406, 23);
+            dtpRegistroAutor.TabIndex = 5;
             // 
             // txtCiudadEAutor
             // 
@@ -89,7 +89,7 @@
             txtCiudadEAutor.Depth = 0;
             txtCiudadEAutor.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtCiudadEAutor.HideSelection = true;
-            txtCiudadEAutor.Hint = "Ciudad";
+            txtCiudadEAutor.Hint = "Nacionalidad";
             txtCiudadEAutor.LeadingIcon = null;
             txtCiudadEAutor.Location = new Point(220, 173);
             txtCiudadEAutor.MaxLength = 32767;
@@ -222,5 +222,6 @@
         private MaterialSkin.Controls.MaterialTextBox2 txtTelefonoAutor;
         private MaterialSkin.Controls.MaterialTextBox2 txtEmailAutor;
         private MaterialSkin.Controls.MaterialTextBox2 txtNombreAutor;
+        private DateTimePicker dtpRegistroAutor;
     }
 }

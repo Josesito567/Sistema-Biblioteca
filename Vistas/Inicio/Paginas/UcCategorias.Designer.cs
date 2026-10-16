@@ -18,6 +18,7 @@ partial class UcCategorias
         lblTitulo = new MaterialSkin.Controls.MaterialLabel();
         lblDescripcion = new MaterialSkin.Controls.MaterialLabel();
         dataGridView1 = new DataGridView();
+        btnCaCrear = new MaterialSkin.Controls.MaterialButton();
         ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
         SuspendLayout();
         // 
@@ -51,19 +52,41 @@ partial class UcCategorias
         dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         dataGridView1.BackgroundColor = Color.White;
         dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dataGridView1.Location = new Point(25, 87);
+        dataGridView1.Location = new Point(26, 87);
         dataGridView1.Name = "dataGridView1";
-        dataGridView1.Size = new Size(989, 512);
+        dataGridView1.Size = new Size(1774, 808);
         dataGridView1.TabIndex = 2;
+        // 
+        // btnCaCrear
+        // 
+        btnCaCrear.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+        btnCaCrear.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        btnCaCrear.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+        btnCaCrear.Depth = 0;
+        btnCaCrear.HighEmphasis = true;
+        btnCaCrear.Icon = null;
+        btnCaCrear.Location = new Point(1647, 42);
+        btnCaCrear.Margin = new Padding(4, 6, 4, 6);
+        btnCaCrear.MouseState = MaterialSkin.MouseState.HOVER;
+        btnCaCrear.Name = "btnCaCrear";
+        btnCaCrear.NoAccentTextColor = Color.Empty;
+        btnCaCrear.Size = new Size(153, 36);
+        btnCaCrear.TabIndex = 3;
+        btnCaCrear.Text = "Nueva Categoria";
+        btnCaCrear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+        btnCaCrear.UseAccentColor = false;
+        btnCaCrear.UseVisualStyleBackColor = true;
+        btnCaCrear.Click += btnCaCrear_Click;
         // 
         // UcCategorias
         // 
         BackColor = SystemColors.Control;
+        Controls.Add(btnCaCrear);
         Controls.Add(dataGridView1);
         Controls.Add(lblDescripcion);
         Controls.Add(lblTitulo);
         Name = "UcCategorias";
-        Size = new Size(1041, 622);
+        Size = new Size(1824, 939);
         ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
         ResumeLayout(false);
         PerformLayout();
@@ -72,4 +95,5 @@ partial class UcCategorias
     private MaterialSkin.Controls.MaterialLabel lblTitulo;
     private MaterialSkin.Controls.MaterialLabel lblDescripcion;
     private DataGridView dataGridView1;
+    private MaterialSkin.Controls.MaterialButton btnCaCrear;
 }

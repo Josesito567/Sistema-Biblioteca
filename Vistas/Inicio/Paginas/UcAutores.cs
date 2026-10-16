@@ -16,4 +16,12 @@ public partial class UcAutores : UserControl
         dgvAutores.DataSource = Sistema_Biblioteca.Controladores.AutoresControlador.GetAll();
         DataGridViewEstilo.Aplicar(dgvAutores, "id_autores");
     }
+
+    private void btnAuCrear_Click(object sender, EventArgs e)
+    {
+        using (var modal = new Modales.NuevoAutor())
+        {
+            modal.ShowDialog(this);
+        }
+    }
 }

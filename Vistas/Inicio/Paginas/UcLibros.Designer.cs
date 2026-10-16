@@ -17,7 +17,6 @@ partial class UcLibros
     private void InitializeComponent()
     {
         pnlNavegacionLibros = new Panel();
-        btnLiCrear = new MaterialSkin.Controls.MaterialButton();
         btnEditoriales = new MaterialSkin.Controls.MaterialButton();
         btnCategorias = new MaterialSkin.Controls.MaterialButton();
         btnLibros = new MaterialSkin.Controls.MaterialButton();
@@ -28,7 +27,6 @@ partial class UcLibros
         // 
         // pnlNavegacionLibros
         // 
-        pnlNavegacionLibros.Controls.Add(btnLiCrear);
         pnlNavegacionLibros.Controls.Add(btnEditoriales);
         pnlNavegacionLibros.Controls.Add(btnCategorias);
         pnlNavegacionLibros.Controls.Add(btnLibros);
@@ -38,26 +36,6 @@ partial class UcLibros
         pnlNavegacionLibros.Name = "pnlNavegacionLibros";
         pnlNavegacionLibros.Size = new Size(1418, 52);
         pnlNavegacionLibros.TabIndex = 0;
-        // 
-        // btnLiCrear
-        // 
-        btnLiCrear.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-        btnLiCrear.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-        btnLiCrear.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-        btnLiCrear.Depth = 0;
-        btnLiCrear.HighEmphasis = true;
-        btnLiCrear.Icon = null;
-        btnLiCrear.Location = new Point(1263, 16);
-        btnLiCrear.Margin = new Padding(4, 6, 4, 6);
-        btnLiCrear.MouseState = MaterialSkin.MouseState.HOVER;
-        btnLiCrear.Name = "btnLiCrear";
-        btnLiCrear.NoAccentTextColor = Color.Empty;
-        btnLiCrear.Size = new Size(114, 36);
-        btnLiCrear.TabIndex = 4;
-        btnLiCrear.Text = "Nuevo Libro";
-        btnLiCrear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-        btnLiCrear.UseAccentColor = false;
-        btnLiCrear.UseVisualStyleBackColor = true;
         // 
         // btnEditoriales
         // 
@@ -138,6 +116,7 @@ partial class UcLibros
         btnAutores.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
         btnAutores.UseAccentColor = false;
         btnAutores.UseVisualStyleBackColor = true;
+        btnAutores.Click += btnAutores_Click;
         // 
         // pnlContenidoLibros
         // 
@@ -157,7 +136,6 @@ partial class UcLibros
         Name = "UcLibros";
         Size = new Size(1418, 779);
         pnlNavegacionLibros.ResumeLayout(false);
-        pnlNavegacionLibros.PerformLayout();
         ResumeLayout(false);
     }
 
@@ -169,5 +147,4 @@ partial class UcLibros
     private MaterialSkin.Controls.MaterialButton btnLibros;
     private MaterialSkin.Controls.MaterialButton btnAutores;
     private System.Windows.Forms.Panel pnlContenidoLibros;
-    private MaterialSkin.Controls.MaterialButton btnLiCrear;
 }

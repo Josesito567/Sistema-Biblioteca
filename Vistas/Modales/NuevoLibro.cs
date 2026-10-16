@@ -30,5 +30,14 @@ namespace Sistema_Biblioteca.Vistas.Modales
         {
 
         }
+
+        private void btnGuardarLibro_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void dtpRegistroAutor_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
-}
+} 

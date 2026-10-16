@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             pnlNuevaEditorial = new Panel();
+            dtpAnioPublicacion = new DateTimePicker();
             btnGuardarLibro = new MaterialSkin.Controls.MaterialButton();
             dtpRegistroAutor = new DateTimePicker();
             txtDescripcionLibro = new MaterialSkin.Controls.MaterialTextBox2();
             txtTituloLibro = new MaterialSkin.Controls.MaterialTextBox2();
-            dtpAnioPublicacion = new DateTimePicker();
-            txtAnioPublicacionLibro = new MaterialSkin.Controls.MaterialTextBox();
-            txtFechaRegistroLibro = new MaterialSkin.Controls.MaterialTextBox();
+            txtFechaRegistroLibro = new MaterialSkin.Controls.MaterialLabel();
+            txtAnioPublicacionLibro = new MaterialSkin.Controls.MaterialLabel();
             pnlNuevaEditorial.SuspendLayout();
             SuspendLayout();
             // 
             // pnlNuevaEditorial
             // 
             pnlNuevaEditorial.AccessibleName = "pnlNuevaEditorial";
-            pnlNuevaEditorial.Controls.Add(txtFechaRegistroLibro);
             pnlNuevaEditorial.Controls.Add(txtAnioPublicacionLibro);
+            pnlNuevaEditorial.Controls.Add(txtFechaRegistroLibro);
             pnlNuevaEditorial.Controls.Add(dtpAnioPublicacion);
             pnlNuevaEditorial.Controls.Add(btnGuardarLibro);
             pnlNuevaEditorial.Controls.Add(dtpRegistroAutor);
@@ -53,6 +53,14 @@
             pnlNuevaEditorial.Name = "pnlNuevaEditorial";
             pnlNuevaEditorial.Size = new Size(456, 449);
             pnlNuevaEditorial.TabIndex = 2;
+            // 
+            // dtpAnioPublicacion
+            // 
+            dtpAnioPublicacion.AccessibleName = "dtpAnioPublicacion";
+            dtpAnioPublicacion.Location = new Point(24, 231);
+            dtpAnioPublicacion.Name = "dtpAnioPublicacion";
+            dtpAnioPublicacion.Size = new Size(406, 23);
+            dtpAnioPublicacion.TabIndex = 7;
             // 
             // btnGuardarLibro
             // 
@@ -74,14 +82,16 @@
             btnGuardarLibro.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btnGuardarLibro.UseAccentColor = false;
             btnGuardarLibro.UseVisualStyleBackColor = true;
+            btnGuardarLibro.Click += btnGuardarLibro_Click;
             // 
             // dtpRegistroAutor
             // 
             dtpRegistroAutor.AccessibleName = "dtpRegistroAutor";
-            dtpRegistroAutor.Location = new Point(24, 330);
+            dtpRegistroAutor.Location = new Point(24, 315);
             dtpRegistroAutor.Name = "dtpRegistroAutor";
             dtpRegistroAutor.Size = new Size(406, 23);
             dtpRegistroAutor.TabIndex = 5;
+            dtpRegistroAutor.ValueChanged += dtpRegistroAutor_ValueChanged;
             // 
             // txtDescripcionLibro
             // 
@@ -143,50 +153,29 @@
             txtTituloLibro.TrailingIcon = null;
             txtTituloLibro.UseSystemPasswordChar = false;
             // 
-            // dtpAnioPublicacion
+            // txtFechaRegistroLibro
             // 
-            dtpAnioPublicacion.AccessibleName = "dtpAnioPublicacion";
-            dtpAnioPublicacion.Location = new Point(24, 231);
-            dtpAnioPublicacion.Name = "dtpAnioPublicacion";
-            dtpAnioPublicacion.Size = new Size(406, 23);
-            dtpAnioPublicacion.TabIndex = 7;
+            txtFechaRegistroLibro.AutoSize = true;
+            txtFechaRegistroLibro.Depth = 0;
+            txtFechaRegistroLibro.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtFechaRegistroLibro.Location = new Point(24, 282);
+            txtFechaRegistroLibro.MouseState = MaterialSkin.MouseState.HOVER;
+            txtFechaRegistroLibro.Name = "txtFechaRegistroLibro";
+            txtFechaRegistroLibro.Size = new Size(127, 19);
+            txtFechaRegistroLibro.TabIndex = 10;
+            txtFechaRegistroLibro.Text = "Fecha de Registro";
             // 
             // txtAnioPublicacionLibro
             // 
-            txtAnioPublicacionLibro.AccessibleDescription = "txtAnioPublicacionLibro";
-            txtAnioPublicacionLibro.AnimateReadOnly = false;
-            txtAnioPublicacionLibro.BorderStyle = BorderStyle.None;
+            txtAnioPublicacionLibro.AutoSize = true;
             txtAnioPublicacionLibro.Depth = 0;
-            txtAnioPublicacionLibro.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtAnioPublicacionLibro.LeadingIcon = null;
-            txtAnioPublicacionLibro.Location = new Point(24, 175);
-            txtAnioPublicacionLibro.MaxLength = 50;
-            txtAnioPublicacionLibro.MouseState = MaterialSkin.MouseState.OUT;
-            txtAnioPublicacionLibro.Multiline = false;
+            txtAnioPublicacionLibro.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtAnioPublicacionLibro.Location = new Point(24, 189);
+            txtAnioPublicacionLibro.MouseState = MaterialSkin.MouseState.HOVER;
             txtAnioPublicacionLibro.Name = "txtAnioPublicacionLibro";
-            txtAnioPublicacionLibro.Size = new Size(166, 50);
-            txtAnioPublicacionLibro.TabIndex = 8;
+            txtAnioPublicacionLibro.Size = new Size(137, 19);
+            txtAnioPublicacionLibro.TabIndex = 11;
             txtAnioPublicacionLibro.Text = "Año de Publicación";
-            txtAnioPublicacionLibro.TrailingIcon = null;
-            // 
-            // txtFechaRegistroLibro
-            // 
-            txtFechaRegistroLibro.AccessibleDescription = "txtFechaRegistroLibro";
-            txtFechaRegistroLibro.AnimateReadOnly = false;
-            txtFechaRegistroLibro.BorderStyle = BorderStyle.None;
-            txtFechaRegistroLibro.Depth = 0;
-            txtFechaRegistroLibro.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtFechaRegistroLibro.LeadingIcon = null;
-            txtFechaRegistroLibro.Location = new Point(24, 274);
-            txtFechaRegistroLibro.MaxLength = 50;
-            txtFechaRegistroLibro.MouseState = MaterialSkin.MouseState.OUT;
-            txtFechaRegistroLibro.Multiline = false;
-            txtFechaRegistroLibro.Name = "txtFechaRegistroLibro";
-            txtFechaRegistroLibro.Size = new Size(166, 50);
-            txtFechaRegistroLibro.TabIndex = 9;
-            txtFechaRegistroLibro.Text = "Fecha de Registro";
-            txtFechaRegistroLibro.TrailingIcon = null;
-            txtFechaRegistroLibro.TextChanged += materialTextBox1_TextChanged;
             // 
             // NuevoLibro
             // 
@@ -209,9 +198,9 @@
         private MaterialSkin.Controls.MaterialTextBox2 txtDescripcionLibro;
         private MaterialSkin.Controls.MaterialTextBox2 txtTituloLibro;
         private DateTimePicker dateTimePicker1;
-        private MaterialSkin.Controls.MaterialTextBox txtAnioPublicacionLibro;
-        private MaterialSkin.Controls.MaterialTextBox txtFechaRegistroLibro;
         private DateTimePicker dtpRegistroAutor;
         private DateTimePicker dtpAnioPublicacion;
+        private MaterialSkin.Controls.MaterialLabel txtFechaRegistroLibro;
+        private MaterialSkin.Controls.MaterialLabel txtAnioPublicacionLibro;
     }
 }

@@ -18,6 +18,7 @@ partial class UcCatalogoLibros
         lblTitulo = new MaterialSkin.Controls.MaterialLabel();
         lblDescripcion = new MaterialSkin.Controls.MaterialLabel();
         dgvCatalogoLibros = new DataGridView();
+        btnLiCrear = new MaterialSkin.Controls.MaterialButton();
         ((System.ComponentModel.ISupportInitialize)dgvCatalogoLibros).BeginInit();
         SuspendLayout();
         // 
@@ -56,8 +57,30 @@ partial class UcCatalogoLibros
         dgvCatalogoLibros.Size = new Size(879, 460);
         dgvCatalogoLibros.TabIndex = 2;
         // 
+        // btnLiCrear
+        // 
+        btnLiCrear.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+        btnLiCrear.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        btnLiCrear.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+        btnLiCrear.Depth = 0;
+        btnLiCrear.HighEmphasis = true;
+        btnLiCrear.Icon = null;
+        btnLiCrear.Location = new Point(790, 42);
+        btnLiCrear.Margin = new Padding(4, 6, 4, 6);
+        btnLiCrear.MouseState = MaterialSkin.MouseState.HOVER;
+        btnLiCrear.Name = "btnLiCrear";
+        btnLiCrear.NoAccentTextColor = Color.Empty;
+        btnLiCrear.Size = new Size(114, 36);
+        btnLiCrear.TabIndex = 5;
+        btnLiCrear.Text = "Nuevo Libro";
+        btnLiCrear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+        btnLiCrear.UseAccentColor = false;
+        btnLiCrear.UseVisualStyleBackColor = true;
+        btnLiCrear.Click += btnLiCrear_Click;
+        // 
         // UcCatalogoLibros
         // 
+        Controls.Add(btnLiCrear);
         Controls.Add(dgvCatalogoLibros);
         Controls.Add(lblDescripcion);
         Controls.Add(lblTitulo);
@@ -71,4 +94,5 @@ partial class UcCatalogoLibros
     private MaterialSkin.Controls.MaterialLabel lblTitulo;
     private MaterialSkin.Controls.MaterialLabel lblDescripcion;
     private DataGridView dgvCatalogoLibros;
+    private MaterialSkin.Controls.MaterialButton btnLiCrear;
 }
