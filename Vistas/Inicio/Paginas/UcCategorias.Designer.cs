@@ -19,6 +19,9 @@ partial class UcCategorias
         lblDescripcion = new MaterialSkin.Controls.MaterialLabel();
         dataGridView1 = new DataGridView();
         btnCaCrear = new MaterialSkin.Controls.MaterialButton();
+        txtBuscar = new MaterialSkin.Controls.MaterialTextBox2();
+        btnBuscar = new MaterialSkin.Controls.MaterialButton();
+        btnRefrescar = new MaterialSkin.Controls.MaterialButton();
         ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
         SuspendLayout();
         // 
@@ -47,12 +50,39 @@ partial class UcCategorias
         lblDescripcion.TabIndex = 0;
         lblDescripcion.Text = "Panel de gestión de categorías.";
         // 
+        // txtBuscar
+        // 
+        txtBuscar.Location = new Point(25, 87);
+        txtBuscar.Name = "txtBuscar";
+        txtBuscar.Size = new Size(280, 48);
+        txtBuscar.TabIndex = 4;
+        // 
+        // btnBuscar
+        // 
+        btnBuscar.Location = new Point(320, 93);
+        btnBuscar.Name = "btnBuscar";
+        btnBuscar.Size = new Size(105, 36);
+        btnBuscar.TabIndex = 5;
+        btnBuscar.Text = "Buscar";
+        btnBuscar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+        btnBuscar.Click += btnBuscar_Click;
+        // 
+        // btnRefrescar
+        // 
+        btnRefrescar.Location = new Point(435, 93);
+        btnRefrescar.Name = "btnRefrescar";
+        btnRefrescar.Size = new Size(105, 36);
+        btnRefrescar.TabIndex = 6;
+        btnRefrescar.Text = "Refrescar";
+        btnRefrescar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+        btnRefrescar.Click += btnRefrescar_Click;
+        // 
         // dataGridView1
         // 
         dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         dataGridView1.BackgroundColor = Color.White;
         dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dataGridView1.Location = new Point(26, 87);
+        dataGridView1.Location = new Point(25, 145);
         dataGridView1.Name = "dataGridView1";
         dataGridView1.Size = new Size(1774, 808);
         dataGridView1.TabIndex = 2;
@@ -81,6 +111,9 @@ partial class UcCategorias
         // UcCategorias
         // 
         BackColor = SystemColors.Control;
+        Controls.Add(btnRefrescar);
+        Controls.Add(btnBuscar);
+        Controls.Add(txtBuscar);
         Controls.Add(btnCaCrear);
         Controls.Add(dataGridView1);
         Controls.Add(lblDescripcion);
@@ -96,4 +129,7 @@ partial class UcCategorias
     private MaterialSkin.Controls.MaterialLabel lblDescripcion;
     private DataGridView dataGridView1;
     private MaterialSkin.Controls.MaterialButton btnCaCrear;
+    private MaterialSkin.Controls.MaterialTextBox2 txtBuscar;
+    private MaterialSkin.Controls.MaterialButton btnBuscar;
+    private MaterialSkin.Controls.MaterialButton btnRefrescar;
 }

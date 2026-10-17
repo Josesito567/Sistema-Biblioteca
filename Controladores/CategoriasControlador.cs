@@ -12,4 +12,12 @@ public static class CategoriasControlador
         using var context = new LibraryContext();
         return context.Categorias.ToList();
     }
+
+    //Crear una nueva categoria
+    public static void Create(CategoriasModelo categoria)
+    {
+        using var context = new LibraryContext();
+        context.Categorias.Add(categoria);
+        context.SaveChanges();
+    }
 }

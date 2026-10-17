@@ -20,6 +20,9 @@ partial class UcPrestamos
         lblTitulo = new MaterialSkin.Controls.MaterialLabel();
         lblSubtitulo = new MaterialSkin.Controls.MaterialLabel();
         dgvPrestamos = new DataGridView();
+        txtBuscar = new MaterialSkin.Controls.MaterialTextBox2();
+        btnBuscar = new MaterialSkin.Controls.MaterialButton();
+        btnRefrescar = new MaterialSkin.Controls.MaterialButton();
         ((System.ComponentModel.ISupportInitialize)dgvPrestamos).BeginInit();
         SuspendLayout();
         // 
@@ -48,12 +51,39 @@ partial class UcPrestamos
         lblSubtitulo.TabIndex = 1;
         lblSubtitulo.Text = "Registro de salidas y entregas de libros";
         // 
+        // txtBuscar
+        // 
+        txtBuscar.Location = new Point(25, 87);
+        txtBuscar.Name = "txtBuscar";
+        txtBuscar.Size = new Size(280, 48);
+        txtBuscar.TabIndex = 3;
+        // 
+        // btnBuscar
+        // 
+        btnBuscar.Location = new Point(320, 93);
+        btnBuscar.Name = "btnBuscar";
+        btnBuscar.Size = new Size(105, 36);
+        btnBuscar.TabIndex = 4;
+        btnBuscar.Text = "Buscar";
+        btnBuscar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+        btnBuscar.Click += btnBuscar_Click;
+        // 
+        // btnRefrescar
+        // 
+        btnRefrescar.Location = new Point(435, 93);
+        btnRefrescar.Name = "btnRefrescar";
+        btnRefrescar.Size = new Size(105, 36);
+        btnRefrescar.TabIndex = 5;
+        btnRefrescar.Text = "Refrescar";
+        btnRefrescar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+        btnRefrescar.Click += btnRefrescar_Click;
+        // 
         // dgvPrestamos
         // 
         dgvPrestamos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         dgvPrestamos.BackgroundColor = Color.White;
         dgvPrestamos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dgvPrestamos.Location = new Point(25, 87);
+        dgvPrestamos.Location = new Point(25, 145);
         dgvPrestamos.Name = "dgvPrestamos";
         dgvPrestamos.Size = new Size(777, 439);
         dgvPrestamos.TabIndex = 2;
@@ -62,6 +92,9 @@ partial class UcPrestamos
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
+        Controls.Add(btnRefrescar);
+        Controls.Add(btnBuscar);
+        Controls.Add(txtBuscar);
         Controls.Add(lblSubtitulo);
         Controls.Add(dgvPrestamos);
         Controls.Add(lblTitulo);
@@ -77,4 +110,7 @@ partial class UcPrestamos
     private MaterialSkin.Controls.MaterialLabel lblTitulo;
     private MaterialSkin.Controls.MaterialLabel lblSubtitulo;
     private DataGridView dgvPrestamos;
+    private MaterialSkin.Controls.MaterialTextBox2 txtBuscar;
+    private MaterialSkin.Controls.MaterialButton btnBuscar;
+    private MaterialSkin.Controls.MaterialButton btnRefrescar;
 }

@@ -19,6 +19,9 @@ partial class UcCatalogoLibros
         lblDescripcion = new MaterialSkin.Controls.MaterialLabel();
         dgvCatalogoLibros = new DataGridView();
         btnLiCrear = new MaterialSkin.Controls.MaterialButton();
+        txtBuscar = new MaterialSkin.Controls.MaterialTextBox2();
+        btnBuscar = new MaterialSkin.Controls.MaterialButton();
+        btnRefrescar = new MaterialSkin.Controls.MaterialButton();
         ((System.ComponentModel.ISupportInitialize)dgvCatalogoLibros).BeginInit();
         SuspendLayout();
         // 
@@ -47,12 +50,39 @@ partial class UcCatalogoLibros
         lblDescripcion.TabIndex = 3;
         lblDescripcion.Text = "Panel de gestión y consulta de libros.";
         // 
+        // txtBuscar
+        // 
+        txtBuscar.Location = new Point(25, 87);
+        txtBuscar.Name = "txtBuscar";
+        txtBuscar.Size = new Size(280, 48);
+        txtBuscar.TabIndex = 6;
+        // 
+        // btnBuscar
+        // 
+        btnBuscar.Location = new Point(320, 93);
+        btnBuscar.Name = "btnBuscar";
+        btnBuscar.Size = new Size(105, 36);
+        btnBuscar.TabIndex = 7;
+        btnBuscar.Text = "Buscar";
+        btnBuscar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+        btnBuscar.Click += btnBuscar_Click;
+        // 
+        // btnRefrescar
+        // 
+        btnRefrescar.Location = new Point(435, 93);
+        btnRefrescar.Name = "btnRefrescar";
+        btnRefrescar.Size = new Size(105, 36);
+        btnRefrescar.TabIndex = 8;
+        btnRefrescar.Text = "Refrescar";
+        btnRefrescar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+        btnRefrescar.Click += btnRefrescar_Click;
+        // 
         // dgvCatalogoLibros
         // 
         dgvCatalogoLibros.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         dgvCatalogoLibros.BackgroundColor = Color.White;
         dgvCatalogoLibros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dgvCatalogoLibros.Location = new Point(25, 87);
+        dgvCatalogoLibros.Location = new Point(25, 145);
         dgvCatalogoLibros.Name = "dgvCatalogoLibros";
         dgvCatalogoLibros.Size = new Size(879, 460);
         dgvCatalogoLibros.TabIndex = 2;
@@ -80,6 +110,9 @@ partial class UcCatalogoLibros
         // 
         // UcCatalogoLibros
         // 
+        Controls.Add(btnRefrescar);
+        Controls.Add(btnBuscar);
+        Controls.Add(txtBuscar);
         Controls.Add(btnLiCrear);
         Controls.Add(dgvCatalogoLibros);
         Controls.Add(lblDescripcion);
@@ -95,4 +128,7 @@ partial class UcCatalogoLibros
     private MaterialSkin.Controls.MaterialLabel lblDescripcion;
     private DataGridView dgvCatalogoLibros;
     private MaterialSkin.Controls.MaterialButton btnLiCrear;
+    private MaterialSkin.Controls.MaterialTextBox2 txtBuscar;
+    private MaterialSkin.Controls.MaterialButton btnBuscar;
+    private MaterialSkin.Controls.MaterialButton btnRefrescar;
 }

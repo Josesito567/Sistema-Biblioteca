@@ -33,5 +33,45 @@ namespace Sistema_Biblioteca.Vistas.Modales
         {
 
         }
+
+        private void btnGuardarCategoria_Click(object sender, EventArgs e)
+        {
+            // Validar que el campo de nombre no esté vacío
+            if (string.IsNullOrWhiteSpace(txtNombreCategoria.Text))
+            {
+                MessageBox.Show("El nombre de la categoría no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            //Guardar la nueva categoría en la base de datos
+            var nuevaCategoria = new Sistema_Biblioteca.Modelos.CategoriasModelo
+            {
+                nombre = txtNombreCategoria.Text,
+                descripcion = txtDescripcionCategoria.Text,
+                estado = 1, // Activo
+                fecha_registro = DateTime.Now
+            };
+
+            // Valirdar que la categoría no exista ya en la base de datos
+            if (Sistema_Biblioteca.Controladores.CategoriasControlador.GetAll().Any(c => c.nombre == nuevaCategoria.nombre))
+            {
+                MessageBox.Show("Ya existe una categoría con ese nombre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Aquí deberías agregar la lógica para guardar la nueva categoría en la base de datos
+            Sistema_Biblioteca.Controladores.CategoriasControlador.Create(nuevaCategoria);
+
+            // Mostrar mensaje de éxito
+            MessageBox.Show("La categoría ha sido guardada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Limpiar los campos del formulario
+            txtNombreCategoria.Clear();
+            txtDescripcionCategoria.Clear();
+
+            // Cerrar el formulario modal
+            this.Close();
+
+        }
     }
 }

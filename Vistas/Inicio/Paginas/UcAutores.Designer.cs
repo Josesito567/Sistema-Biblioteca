@@ -19,6 +19,9 @@ partial class UcAutores
         lblDescripcion = new MaterialSkin.Controls.MaterialLabel();
         dgvAutores = new DataGridView();
         btnAuCrear = new MaterialSkin.Controls.MaterialButton();
+        txtBuscar = new MaterialSkin.Controls.MaterialTextBox2();
+        btnBuscar = new MaterialSkin.Controls.MaterialButton();
+        btnRefrescar = new MaterialSkin.Controls.MaterialButton();
         ((System.ComponentModel.ISupportInitialize)dgvAutores).BeginInit();
         SuspendLayout();
         // 
@@ -47,12 +50,39 @@ partial class UcAutores
         lblDescripcion.TabIndex = 3;
         lblDescripcion.Text = "Panel de gestión de autores.";
         // 
+        // txtBuscar
+        // 
+        txtBuscar.Location = new Point(25, 87);
+        txtBuscar.Name = "txtBuscar";
+        txtBuscar.Size = new Size(280, 48);
+        txtBuscar.TabIndex = 6;
+        // 
+        // btnBuscar
+        // 
+        btnBuscar.Location = new Point(320, 93);
+        btnBuscar.Name = "btnBuscar";
+        btnBuscar.Size = new Size(105, 36);
+        btnBuscar.TabIndex = 7;
+        btnBuscar.Text = "Buscar";
+        btnBuscar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+        btnBuscar.Click += btnBuscar_Click;
+        // 
+        // btnRefrescar
+        // 
+        btnRefrescar.Location = new Point(435, 93);
+        btnRefrescar.Name = "btnRefrescar";
+        btnRefrescar.Size = new Size(105, 36);
+        btnRefrescar.TabIndex = 8;
+        btnRefrescar.Text = "Refrescar";
+        btnRefrescar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+        btnRefrescar.Click += btnRefrescar_Click;
+        // 
         // dgvAutores
         // 
         dgvAutores.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         dgvAutores.BackgroundColor = Color.White;
         dgvAutores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dgvAutores.Location = new Point(25, 87);
+        dgvAutores.Location = new Point(25, 145);
         dgvAutores.Name = "dgvAutores";
         dgvAutores.Size = new Size(1774, 808);
         dgvAutores.TabIndex = 2;
@@ -80,6 +110,9 @@ partial class UcAutores
         // 
         // UcAutores
         // 
+        Controls.Add(btnRefrescar);
+        Controls.Add(btnBuscar);
+        Controls.Add(txtBuscar);
         Controls.Add(btnAuCrear);
         Controls.Add(dgvAutores);
         Controls.Add(lblDescripcion);
@@ -95,4 +128,7 @@ partial class UcAutores
     private MaterialSkin.Controls.MaterialLabel lblDescripcion;
     private DataGridView dgvAutores;
     private MaterialSkin.Controls.MaterialButton btnAuCrear;
+    private MaterialSkin.Controls.MaterialTextBox2 txtBuscar;
+    private MaterialSkin.Controls.MaterialButton btnBuscar;
+    private MaterialSkin.Controls.MaterialButton btnRefrescar;
 }

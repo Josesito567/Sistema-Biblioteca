@@ -63,6 +63,7 @@ partial class NuevaCategoria
         btnGuardarCategoria.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
         btnGuardarCategoria.UseAccentColor = false;
         btnGuardarCategoria.UseVisualStyleBackColor = true;
+        btnGuardarCategoria.Click += btnGuardarCategoria_Click;
         // 
         // txtDescripcionCategoria
         // 
@@ -71,7 +72,7 @@ partial class NuevaCategoria
         txtDescripcionCategoria.BackgroundImageLayout = ImageLayout.None;
         txtDescripcionCategoria.CharacterCasing = CharacterCasing.Normal;
         txtDescripcionCategoria.Depth = 0;
-        txtDescripcionCategoria.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+        txtDescripcionCategoria.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
         txtDescripcionCategoria.HideSelection = true;
         txtDescripcionCategoria.Hint = "Descripción";
         txtDescripcionCategoria.LeadingIcon = null;
@@ -101,7 +102,7 @@ partial class NuevaCategoria
         txtNombreCategoria.BackgroundImageLayout = ImageLayout.None;
         txtNombreCategoria.CharacterCasing = CharacterCasing.Normal;
         txtNombreCategoria.Depth = 0;
-        txtNombreCategoria.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+        txtNombreCategoria.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
         txtNombreCategoria.HideSelection = true;
         txtNombreCategoria.Hint = "Nombre de la categoría";
         txtNombreCategoria.LeadingIcon = null;
