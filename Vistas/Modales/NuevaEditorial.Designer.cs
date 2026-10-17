@@ -74,6 +74,7 @@
             btnGuardarEditorial.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btnGuardarEditorial.UseAccentColor = false;
             btnGuardarEditorial.UseVisualStyleBackColor = true;
+            btnGuardarEditorial.Click += btnGuardarEditorial_Click;
             // 
             // dtpRegistroEditorial
             // 

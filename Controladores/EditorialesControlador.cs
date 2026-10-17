@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Sistema_Biblioteca.Data;
+using Sistema_Biblioteca.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
-using Sistema_Biblioteca.Modelos;
-using Sistema_Biblioteca.Data;
 
 namespace Sistema_Biblioteca.Controladores
 {
@@ -13,6 +14,13 @@ namespace Sistema_Biblioteca.Controladores
         {
             using var context = new LibraryContext();
             return context.Editoriales.ToList();
+        }
+
+        public static void Create(EditorialesModelo creareditorial)
+        {
+            using var context = new LibraryContext();
+            context.Editoriales.Add(creareditorial);
+            context.SaveChanges();
         }
     }
 }

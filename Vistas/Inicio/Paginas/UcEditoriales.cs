@@ -27,7 +27,10 @@ public partial class UcEditoriales : UserControl
     {
         using (var modal = new NuevaEditorial())
         {
-            modal.ShowDialog(this);
+            if (modal.ShowDialog(this) == DialogResult.OK)
+            {
+                CargarEditorialesEnLaTabla();
+            }
         }
     }
 }

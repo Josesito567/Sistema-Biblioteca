@@ -39,14 +39,18 @@ public partial class FrmInicio : MaterialForm
         }
 
         // Eventos de navegación del menú lateral
-        this.btnLibros.Click += (s, e) => CambiarVista(btnLibros, new UcLibros());
+        this.btnInicio.Click += (s, e) => MostrarInicio();
+        this.btnLibros.Click += (s, e) => CambiarVista(btnLibros, new UcCatalogoLibros());
+        this.btnAutores.Click += (s, e) => CambiarVista(btnAutores, new UcAutores());
+        this.btnCategorias.Click += (s, e) => CambiarVista(btnCategorias, new UcCategorias());
+        this.btnEditoriales.Click += (s, e) => CambiarVista(btnEditoriales, new UcEditoriales());
         this.btnAyuda.Click += (s, e) => CambiarVista(btnAyuda, new UcAyuda());
         this.btnCerrarSesion.Click += BtnCerrarSesion_Click;
 
         // Suscribir evento de cierre para confirmar salida
         this.FormClosing += FrmInicio_FormClosing;
 
-        CambiarVista(btnLibros, new UcLibros());
+        MostrarInicio();
     }
 
     private void CargarVista(UserControl vista)
@@ -60,11 +64,27 @@ public partial class FrmInicio : MaterialForm
 
     private void CambiarVista(MaterialButton botonActivo, UserControl vista)
     {
+        ActivarBoton(botonActivo);
+        CargarVista(vista);
+    }
+
+    private void MostrarInicio()
+    {
+        ActivarBoton(btnInicio);
+        pnlContenido.Controls.Clear();
+        pnlContenido.Tag = null;
+    }
+
+    private void ActivarBoton(MaterialButton botonActivo)
+    {
+        btnInicio.Type = MaterialButton.MaterialButtonType.Outlined;
         btnLibros.Type = MaterialButton.MaterialButtonType.Outlined;
+        btnAutores.Type = MaterialButton.MaterialButtonType.Outlined;
+        btnCategorias.Type = MaterialButton.MaterialButtonType.Outlined;
+        btnEditoriales.Type = MaterialButton.MaterialButtonType.Outlined;
         btnAyuda.Type = MaterialButton.MaterialButtonType.Outlined;
 
         botonActivo.Type = MaterialButton.MaterialButtonType.Contained;
-        CargarVista(vista);
     }
 
     private void BtnCerrarSesion_Click(object? sender, EventArgs e)

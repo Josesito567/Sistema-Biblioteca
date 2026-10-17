@@ -20,7 +20,11 @@ partial class FrmInicio
         this.pnlBarraLateral = new System.Windows.Forms.Panel();
         this.lblTituloMenu = new MaterialSkin.Controls.MaterialLabel();
         this.lblSubtituloMenu = new MaterialSkin.Controls.MaterialLabel();
+        this.btnInicio = new MaterialSkin.Controls.MaterialButton();
         this.btnLibros = new MaterialSkin.Controls.MaterialButton();
+        this.btnAutores = new MaterialSkin.Controls.MaterialButton();
+        this.btnCategorias = new MaterialSkin.Controls.MaterialButton();
+        this.btnEditoriales = new MaterialSkin.Controls.MaterialButton();
         this.btnAyuda = new MaterialSkin.Controls.MaterialButton();
         this.btnCerrarSesion = new MaterialSkin.Controls.MaterialButton();
         this.pnlContenido = new System.Windows.Forms.Panel();
@@ -34,7 +38,11 @@ partial class FrmInicio
         this.pnlBarraLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
         this.pnlBarraLateral.Controls.Add(this.lblTituloMenu);
         this.pnlBarraLateral.Controls.Add(this.lblSubtituloMenu);
+        this.pnlBarraLateral.Controls.Add(this.btnInicio);
         this.pnlBarraLateral.Controls.Add(this.btnLibros);
+        this.pnlBarraLateral.Controls.Add(this.btnAutores);
+        this.pnlBarraLateral.Controls.Add(this.btnCategorias);
+        this.pnlBarraLateral.Controls.Add(this.btnEditoriales);
         this.pnlBarraLateral.Controls.Add(this.btnAyuda);
         this.pnlBarraLateral.Controls.Add(this.btnCerrarSesion);
         this.pnlBarraLateral.Dock = System.Windows.Forms.DockStyle.Left;
@@ -69,23 +77,90 @@ partial class FrmInicio
         this.lblSubtituloMenu.Text = "Gestión de Biblioteca";
 
         // 
-        // BOTÓN LIBROS
+        // BOTÓN INICIO
+        // 
+        this.btnInicio.AutoSize = false;
+        this.btnInicio.Depth = 0;
+        this.btnInicio.DrawShadows = true;
+        this.btnInicio.HighEmphasis = true;
+        this.btnInicio.Icon = null;
+        this.btnInicio.Location = new System.Drawing.Point(12, 80);
+        this.btnInicio.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+        this.btnInicio.MouseState = MaterialSkin.MouseState.HOVER;
+        this.btnInicio.Name = "btnInicio";
+        this.btnInicio.Size = new System.Drawing.Size(196, 40);
+        this.btnInicio.TabIndex = 1;
+        this.btnInicio.Text = "Inicio";
+        this.btnInicio.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+        this.btnInicio.UseAccentColor = false;
+        this.btnInicio.UseVisualStyleBackColor = true;
+
+        // 
+        // BOTONES DE GESTIÓN
         // 
         this.btnLibros.AutoSize = false;
         this.btnLibros.Depth = 0;
         this.btnLibros.DrawShadows = true;
         this.btnLibros.HighEmphasis = true;
         this.btnLibros.Icon = null;
-        this.btnLibros.Location = new System.Drawing.Point(12, 80);
+        this.btnLibros.Location = new System.Drawing.Point(12, 130);
         this.btnLibros.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
         this.btnLibros.MouseState = MaterialSkin.MouseState.HOVER;
         this.btnLibros.Name = "btnLibros";
         this.btnLibros.Size = new System.Drawing.Size(196, 40);
-        this.btnLibros.TabIndex = 1;
+        this.btnLibros.TabIndex = 2;
         this.btnLibros.Text = "Libros";
-        this.btnLibros.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+        this.btnLibros.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
         this.btnLibros.UseAccentColor = false;
         this.btnLibros.UseVisualStyleBackColor = true;
+
+        this.btnAutores.AutoSize = false;
+        this.btnAutores.Depth = 0;
+        this.btnAutores.DrawShadows = true;
+        this.btnAutores.HighEmphasis = true;
+        this.btnAutores.Icon = null;
+        this.btnAutores.Location = new System.Drawing.Point(12, 180);
+        this.btnAutores.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+        this.btnAutores.MouseState = MaterialSkin.MouseState.HOVER;
+        this.btnAutores.Name = "btnAutores";
+        this.btnAutores.Size = new System.Drawing.Size(196, 40);
+        this.btnAutores.TabIndex = 3;
+        this.btnAutores.Text = "Autores";
+        this.btnAutores.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+        this.btnAutores.UseAccentColor = false;
+        this.btnAutores.UseVisualStyleBackColor = true;
+
+        this.btnCategorias.AutoSize = false;
+        this.btnCategorias.Depth = 0;
+        this.btnCategorias.DrawShadows = true;
+        this.btnCategorias.HighEmphasis = true;
+        this.btnCategorias.Icon = null;
+        this.btnCategorias.Location = new System.Drawing.Point(12, 230);
+        this.btnCategorias.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+        this.btnCategorias.MouseState = MaterialSkin.MouseState.HOVER;
+        this.btnCategorias.Name = "btnCategorias";
+        this.btnCategorias.Size = new System.Drawing.Size(196, 40);
+        this.btnCategorias.TabIndex = 4;
+        this.btnCategorias.Text = "Categorías";
+        this.btnCategorias.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+        this.btnCategorias.UseAccentColor = false;
+        this.btnCategorias.UseVisualStyleBackColor = true;
+
+        this.btnEditoriales.AutoSize = false;
+        this.btnEditoriales.Depth = 0;
+        this.btnEditoriales.DrawShadows = true;
+        this.btnEditoriales.HighEmphasis = true;
+        this.btnEditoriales.Icon = null;
+        this.btnEditoriales.Location = new System.Drawing.Point(12, 280);
+        this.btnEditoriales.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+        this.btnEditoriales.MouseState = MaterialSkin.MouseState.HOVER;
+        this.btnEditoriales.Name = "btnEditoriales";
+        this.btnEditoriales.Size = new System.Drawing.Size(196, 40);
+        this.btnEditoriales.TabIndex = 5;
+        this.btnEditoriales.Text = "Editoriales";
+        this.btnEditoriales.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+        this.btnEditoriales.UseAccentColor = false;
+        this.btnEditoriales.UseVisualStyleBackColor = true;
 
         // 
         // BOTÓN AYUDA
@@ -95,12 +170,12 @@ partial class FrmInicio
         this.btnAyuda.DrawShadows = true;
         this.btnAyuda.HighEmphasis = true;
         this.btnAyuda.Icon = null;
-        this.btnAyuda.Location = new System.Drawing.Point(12, 130);
+        this.btnAyuda.Location = new System.Drawing.Point(12, 340);
         this.btnAyuda.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
         this.btnAyuda.MouseState = MaterialSkin.MouseState.HOVER;
         this.btnAyuda.Name = "btnAyuda";
         this.btnAyuda.Size = new System.Drawing.Size(196, 40);
-        this.btnAyuda.TabIndex = 2;
+        this.btnAyuda.TabIndex = 6;
         this.btnAyuda.Text = "Ayuda";
         this.btnAyuda.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
         this.btnAyuda.UseAccentColor = false;
@@ -119,7 +194,7 @@ partial class FrmInicio
         this.btnCerrarSesion.MouseState = MaterialSkin.MouseState.HOVER;
         this.btnCerrarSesion.Name = "btnCerrarSesion";
         this.btnCerrarSesion.Size = new System.Drawing.Size(196, 40);
-        this.btnCerrarSesion.TabIndex = 3;
+        this.btnCerrarSesion.TabIndex = 7;
         this.btnCerrarSesion.Text = "Cerrar Sesión";
         this.btnCerrarSesion.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text;
         this.btnCerrarSesion.UseAccentColor = true;
@@ -155,7 +230,11 @@ partial class FrmInicio
     private System.Windows.Forms.Panel pnlBarraLateral;
     private MaterialSkin.Controls.MaterialLabel lblTituloMenu;
     private MaterialSkin.Controls.MaterialLabel lblSubtituloMenu;
+    private MaterialSkin.Controls.MaterialButton btnInicio;
     private MaterialSkin.Controls.MaterialButton btnLibros;
+    private MaterialSkin.Controls.MaterialButton btnAutores;
+    private MaterialSkin.Controls.MaterialButton btnCategorias;
+    private MaterialSkin.Controls.MaterialButton btnEditoriales;
     private MaterialSkin.Controls.MaterialButton btnAyuda;
     private MaterialSkin.Controls.MaterialButton btnCerrarSesion;
     private System.Windows.Forms.Panel pnlContenido;

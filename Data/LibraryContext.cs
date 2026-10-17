@@ -16,7 +16,7 @@ namespace Sistema_Biblioteca.Data
             DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
-                @"Server=14-LAB1PC4\TECHNOTEL;
+                @"Server=14-LAB1PC3\TECHNOTEL;
                   Database=sistema_biblioteca;
                   Trusted_Connection=True;
                   TrustServerCertificate=True;");
