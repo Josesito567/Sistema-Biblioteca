@@ -102,7 +102,7 @@ partial class UcCatalogoLibros
         btnLiCrear.NoAccentTextColor = Color.Empty;
         btnLiCrear.Size = new Size(114, 36);
         btnLiCrear.TabIndex = 5;
-        btnLiCrear.Text = "Nuevo Libro";
+         btnLiCrear.Text = "Nuevo ejemplar";
         btnLiCrear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
         btnLiCrear.UseAccentColor = false;
         btnLiCrear.UseVisualStyleBackColor = true;

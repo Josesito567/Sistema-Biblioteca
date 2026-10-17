@@ -12,6 +12,7 @@ public partial class UcCatalogoLibros : UserControl
     {
         InitializeComponent();
         ControlesTablaEstilo.Aplicar(txtBuscar, btnBuscar, btnRefrescar);
+        dgvCatalogoLibros.CellDoubleClick += dgvCatalogoLibros_CellDoubleClick;
         CargarCatalogoEnLaTabla();
     }
 
@@ -43,12 +44,27 @@ public partial class UcCatalogoLibros : UserControl
 
     private void btnLiCrear_Click(object sender, EventArgs e)
     {
-        using (var modal = new Modales.NuevoLibro())
+        using (var modal = new Modales.NuevoCatalogoLibro())
         {
             if (modal.ShowDialog(this) == DialogResult.OK)
             {
                 CargarCatalogoEnLaTabla();
             }
+        }
+    }
+
+    private void dgvCatalogoLibros_CellDoubleClick(object? sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0 ||
+            dgvCatalogoLibros.Rows[e.RowIndex].DataBoundItem is not CatalogoLibrosListadoModelo registro)
+        {
+            return;
+        }
+
+        using var modal = new Modales.NuevoCatalogoLibro(registro);
+        if (modal.ShowDialog(this) == DialogResult.OK)
+        {
+            CargarCatalogoEnLaTabla();
         }
     }
 }

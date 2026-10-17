@@ -3,6 +3,7 @@ namespace Sistema_Biblioteca.Vistas.Inicio.Paginas;
 using Sistema_Biblioteca.Modelos;
 using System.Windows.Forms;
 using Sistema_Biblioteca.Estilos;
+using System.Drawing.Text;
 
 public partial class UcAutores : UserControl
 {
@@ -12,6 +13,7 @@ public partial class UcAutores : UserControl
     {
         InitializeComponent();
         ControlesTablaEstilo.Aplicar(txtBuscar, btnBuscar, btnRefrescar);
+        dgvAutores.CellDoubleClick += dgvAutores_CellDoubleClick;
         CargarAutoresEnLaTabla();
     }
 
@@ -48,7 +50,27 @@ public partial class UcAutores : UserControl
             if (modal.ShowDialog(this) == DialogResult.OK)
             {
                 CargarAutoresEnLaTabla();
+
+                // refresh the DataGridView to show the newly added author
+
+             
+
+
             }
+        }
+    }
+
+    private void dgvAutores_CellDoubleClick(object? sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0 || dgvAutores.Rows[e.RowIndex].DataBoundItem is not AutoresModelo autor)
+        {
+            return;
+        }
+
+        using var modal = new Modales.NuevoAutor(autor);
+        if (modal.ShowDialog(this) == DialogResult.OK)
+        {
+            CargarAutoresEnLaTabla();
         }
     }
 }

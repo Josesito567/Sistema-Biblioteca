@@ -29,4 +29,18 @@ public static class CatalogoLibrosControlador
             }
         ).ToList();
     }
+
+    public static void Create(CatalogoLibrosModelo catalogo)
+    {
+        using var context = new LibraryContext();
+        context.CatalogoLibros.Add(catalogo);
+        context.SaveChanges();
+    }
+
+    public static void Update(CatalogoLibrosModelo catalogo)
+    {
+        using var context = new LibraryContext();
+        context.CatalogoLibros.Update(catalogo);
+        context.SaveChanges();
+    }
 }

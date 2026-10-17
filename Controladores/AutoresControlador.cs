@@ -12,4 +12,18 @@ public static class AutoresControlador
         using var context = new LibraryContext();
         return context.Autores.ToList();
     }
+
+    public static void Create(AutoresModelo nuevoAutor)
+    {
+        using var context = new LibraryContext();
+        context.Autores.Add(nuevoAutor);
+        context.SaveChanges();
+    }
+
+    public static void Update(AutoresModelo autor)
+    {
+        using var context = new LibraryContext();
+        context.Autores.Update(autor);
+        context.SaveChanges();
+    }
 }

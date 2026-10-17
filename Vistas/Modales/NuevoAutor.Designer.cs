@@ -31,7 +31,7 @@
             pnlNuevaEditorial = new Panel();
             btnGuardarAutor = new MaterialSkin.Controls.MaterialButton();
             dtpRegistroAutor = new DateTimePicker();
-            txtCiudadEAutor = new MaterialSkin.Controls.MaterialTextBox2();
+            txtNacionalidadEAutor = new MaterialSkin.Controls.MaterialTextBox2();
             txtTelefonoAutor = new MaterialSkin.Controls.MaterialTextBox2();
             txtEmailAutor = new MaterialSkin.Controls.MaterialTextBox2();
             txtNombreAutor = new MaterialSkin.Controls.MaterialTextBox2();
@@ -43,7 +43,7 @@
             pnlNuevaEditorial.AccessibleName = "pnlNuevaEditorial";
             pnlNuevaEditorial.Controls.Add(btnGuardarAutor);
             pnlNuevaEditorial.Controls.Add(dtpRegistroAutor);
-            pnlNuevaEditorial.Controls.Add(txtCiudadEAutor);
+            pnlNuevaEditorial.Controls.Add(txtNacionalidadEAutor);
             pnlNuevaEditorial.Controls.Add(txtTelefonoAutor);
             pnlNuevaEditorial.Controls.Add(txtEmailAutor);
             pnlNuevaEditorial.Controls.Add(txtNombreAutor);
@@ -72,6 +72,7 @@
             btnGuardarAutor.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btnGuardarAutor.UseAccentColor = false;
             btnGuardarAutor.UseVisualStyleBackColor = true;
+            btnGuardarAutor.Click += btnGuardarAutor_Click;
             // 
             // dtpRegistroAutor
             // 
@@ -81,34 +82,34 @@
             dtpRegistroAutor.Size = new Size(406, 23);
             dtpRegistroAutor.TabIndex = 5;
             // 
-            // txtCiudadEAutor
+            // txtNacionalidadEAutor
             // 
-            txtCiudadEAutor.AnimateReadOnly = false;
-            txtCiudadEAutor.BackgroundImageLayout = ImageLayout.None;
-            txtCiudadEAutor.CharacterCasing = CharacterCasing.Normal;
-            txtCiudadEAutor.Depth = 0;
-            txtCiudadEAutor.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtCiudadEAutor.HideSelection = true;
-            txtCiudadEAutor.Hint = "Nacionalidad";
-            txtCiudadEAutor.LeadingIcon = null;
-            txtCiudadEAutor.Location = new Point(220, 173);
-            txtCiudadEAutor.MaxLength = 32767;
-            txtCiudadEAutor.MouseState = MaterialSkin.MouseState.OUT;
-            txtCiudadEAutor.Name = "txtCiudadEAutor";
-            txtCiudadEAutor.PasswordChar = '\0';
-            txtCiudadEAutor.PrefixSuffixText = null;
-            txtCiudadEAutor.ReadOnly = false;
-            txtCiudadEAutor.RightToLeft = RightToLeft.No;
-            txtCiudadEAutor.SelectedText = "";
-            txtCiudadEAutor.SelectionLength = 0;
-            txtCiudadEAutor.SelectionStart = 0;
-            txtCiudadEAutor.ShortcutsEnabled = true;
-            txtCiudadEAutor.Size = new Size(210, 48);
-            txtCiudadEAutor.TabIndex = 4;
-            txtCiudadEAutor.TabStop = false;
-            txtCiudadEAutor.TextAlign = HorizontalAlignment.Left;
-            txtCiudadEAutor.TrailingIcon = null;
-            txtCiudadEAutor.UseSystemPasswordChar = false;
+            txtNacionalidadEAutor.AnimateReadOnly = false;
+            txtNacionalidadEAutor.BackgroundImageLayout = ImageLayout.None;
+            txtNacionalidadEAutor.CharacterCasing = CharacterCasing.Normal;
+            txtNacionalidadEAutor.Depth = 0;
+            txtNacionalidadEAutor.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtNacionalidadEAutor.HideSelection = true;
+            txtNacionalidadEAutor.Hint = "Nacionalidad";
+            txtNacionalidadEAutor.LeadingIcon = null;
+            txtNacionalidadEAutor.Location = new Point(220, 173);
+            txtNacionalidadEAutor.MaxLength = 32767;
+            txtNacionalidadEAutor.MouseState = MaterialSkin.MouseState.OUT;
+            txtNacionalidadEAutor.Name = "txtNacionalidadEAutor";
+            txtNacionalidadEAutor.PasswordChar = '\0';
+            txtNacionalidadEAutor.PrefixSuffixText = null;
+            txtNacionalidadEAutor.ReadOnly = false;
+            txtNacionalidadEAutor.RightToLeft = RightToLeft.No;
+            txtNacionalidadEAutor.SelectedText = "";
+            txtNacionalidadEAutor.SelectionLength = 0;
+            txtNacionalidadEAutor.SelectionStart = 0;
+            txtNacionalidadEAutor.ShortcutsEnabled = true;
+            txtNacionalidadEAutor.Size = new Size(210, 48);
+            txtNacionalidadEAutor.TabIndex = 4;
+            txtNacionalidadEAutor.TabStop = false;
+            txtNacionalidadEAutor.TextAlign = HorizontalAlignment.Left;
+            txtNacionalidadEAutor.TrailingIcon = null;
+            txtNacionalidadEAutor.UseSystemPasswordChar = false;
             // 
             // txtTelefonoAutor
             // 
@@ -218,7 +219,7 @@
         private Panel pnlNuevaEditorial;
         private MaterialSkin.Controls.MaterialButton btnGuardarAutor;
         private DateTimePicker dtpRegistroEditorial;
-        private MaterialSkin.Controls.MaterialTextBox2 txtCiudadEAutor;
+        private MaterialSkin.Controls.MaterialTextBox2 txtNacionalidadEAutor;
         private MaterialSkin.Controls.MaterialTextBox2 txtTelefonoAutor;
         private MaterialSkin.Controls.MaterialTextBox2 txtEmailAutor;
         private MaterialSkin.Controls.MaterialTextBox2 txtNombreAutor;

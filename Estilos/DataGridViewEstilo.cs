@@ -87,13 +87,14 @@ public static class DataGridViewEstilo
 
         if (nombreColumna.Equals("estado", StringComparison.OrdinalIgnoreCase))
         {
-            if (valor is "Activo" or "Inactivo")
+            if (valor == "Activo" || valor == "Inactivo")
             {
                 e.FormattingApplied = true;
                 return;
             }
 
-            if (byte.TryParse(valor, out var estado))
+            byte estado;
+            if (byte.TryParse(valor, out estado))
             {
                 e.Value = estado == 1 ? "Activo" : "Inactivo";
                 e.FormattingApplied = true;
@@ -101,13 +102,14 @@ public static class DataGridViewEstilo
         }
         else if (nombreColumna.Equals("disponible", StringComparison.OrdinalIgnoreCase))
         {
-            if (valor is "Disponible" or "No disponible")
+            if (valor == "Disponible" || valor == "No disponible")
             {
                 e.FormattingApplied = true;
                 return;
             }
 
-            if (byte.TryParse(valor, out var disponible))
+            byte disponible;
+            if (byte.TryParse(valor, out disponible))
             {
                 e.Value = disponible == 1 ? "Disponible" : "No disponible";
                 e.FormattingApplied = true;
