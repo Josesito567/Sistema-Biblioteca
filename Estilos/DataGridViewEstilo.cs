@@ -69,6 +69,8 @@ public static class DataGridViewEstilo
             columna.SortMode = DataGridViewColumnSortMode.Automatic;
         }
 
+        // Evita que aplicar el estilo varias veces registre el mismo controlador.
+        tabla.CellFormatting -= Tabla_CellFormatting;
         tabla.CellFormatting += Tabla_CellFormatting;
     }
 
@@ -81,15 +83,35 @@ public static class DataGridViewEstilo
 
         var nombreColumna = tabla.Columns[e.ColumnIndex].Name;
 
+        var valor = e.Value?.ToString();
+
         if (nombreColumna.Equals("estado", StringComparison.OrdinalIgnoreCase))
         {
-            e.Value = Convert.ToByte(e.Value ?? 0) == 1 ? "Activo" : "Inactivo";
-            e.FormattingApplied = true;
+            if (valor is "Activo" or "Inactivo")
+            {
+                e.FormattingApplied = true;
+                return;
+            }
+
+            if (byte.TryParse(valor, out var estado))
+            {
+                e.Value = estado == 1 ? "Activo" : "Inactivo";
+                e.FormattingApplied = true;
+            }
         }
         else if (nombreColumna.Equals("disponible", StringComparison.OrdinalIgnoreCase))
         {
-            e.Value = Convert.ToByte(e.Value ?? 0) == 1 ? "Disponible" : "No disponible";
-            e.FormattingApplied = true;
+            if (valor is "Disponible" or "No disponible")
+            {
+                e.FormattingApplied = true;
+                return;
+            }
+
+            if (byte.TryParse(valor, out var disponible))
+            {
+                e.Value = disponible == 1 ? "Disponible" : "No disponible";
+                e.FormattingApplied = true;
+            }
         }
     }
 }
