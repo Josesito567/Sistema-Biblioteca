@@ -11,11 +11,14 @@ public static class ControlesTablaEstilo
     public static void Aplicar(MaterialTextBox2 campoBusqueda, MaterialButton botonBuscar, MaterialButton botonRefrescar)
     {
         campoBusqueda.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+        campoBusqueda.AccessibleName = "Buscar registros";
         campoBusqueda.Hint = "Buscar...";
         campoBusqueda.Size = new Size(280, 48);
 
         ConfigurarBoton(botonBuscar, "Buscar");
         ConfigurarBoton(botonRefrescar, "Refrescar");
+        botonBuscar.AccessibleName = "Buscar registros";
+        botonRefrescar.AccessibleName = "Refrescar registros";
         botonRefrescar.Type = MaterialButton.MaterialButtonType.Outlined;
     }
 

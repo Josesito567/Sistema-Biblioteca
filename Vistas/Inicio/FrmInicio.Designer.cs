@@ -27,6 +27,10 @@ partial class FrmInicio
         this.btnEditoriales = new MaterialSkin.Controls.MaterialButton();
         this.btnAyuda = new MaterialSkin.Controls.MaterialButton();
         this.btnCerrarSesion = new MaterialSkin.Controls.MaterialButton();
+        this.pnlPerfilUsuario = new System.Windows.Forms.Panel();
+        this.picFotoPerfil = new Sistema_Biblioteca.Controles.picFotoPerfilCircular();
+        this.lblNombreUsuario = new MaterialSkin.Controls.MaterialLabel();
+        this.lblTagUsuario = new MaterialSkin.Controls.MaterialLabel();
         this.pnlContenido = new System.Windows.Forms.Panel();
         
         this.pnlBarraLateral.SuspendLayout();
@@ -44,6 +48,7 @@ partial class FrmInicio
         this.pnlBarraLateral.Controls.Add(this.btnCategorias);
         this.pnlBarraLateral.Controls.Add(this.btnEditoriales);
         this.pnlBarraLateral.Controls.Add(this.btnAyuda);
+        this.pnlBarraLateral.Controls.Add(this.pnlPerfilUsuario);
         this.pnlBarraLateral.Controls.Add(this.btnCerrarSesion);
         this.pnlBarraLateral.Dock = System.Windows.Forms.DockStyle.Left;
         this.pnlBarraLateral.Location = new System.Drawing.Point(3, 64);
@@ -185,20 +190,70 @@ partial class FrmInicio
         // BOTÓN CERRAR SESIÓN
         // 
         this.btnCerrarSesion.AutoSize = false;
+        this.btnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Bottom;
         this.btnCerrarSesion.Depth = 0;
         this.btnCerrarSesion.DrawShadows = true;
         this.btnCerrarSesion.HighEmphasis = true;
         this.btnCerrarSesion.Icon = null;
-        this.btnCerrarSesion.Location = new System.Drawing.Point(12, 540);
+        this.btnCerrarSesion.Location = new System.Drawing.Point(0, 508);
         this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
         this.btnCerrarSesion.MouseState = MaterialSkin.MouseState.HOVER;
         this.btnCerrarSesion.Name = "btnCerrarSesion";
-        this.btnCerrarSesion.Size = new System.Drawing.Size(196, 40);
+        this.btnCerrarSesion.Size = new System.Drawing.Size(220, 40);
         this.btnCerrarSesion.TabIndex = 7;
         this.btnCerrarSesion.Text = "Cerrar Sesión";
         this.btnCerrarSesion.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text;
         this.btnCerrarSesion.UseAccentColor = true;
         this.btnCerrarSesion.UseVisualStyleBackColor = true;
+
+        //
+        // PANEL PERFIL DE USUARIO
+        //
+        this.pnlPerfilUsuario.Controls.Add(this.lblTagUsuario);
+        this.pnlPerfilUsuario.Controls.Add(this.lblNombreUsuario);
+        this.pnlPerfilUsuario.Controls.Add(this.picFotoPerfil);
+        this.pnlPerfilUsuario.Dock = System.Windows.Forms.DockStyle.Bottom;
+        this.pnlPerfilUsuario.Location = new System.Drawing.Point(0, 478);
+        this.pnlPerfilUsuario.Name = "pnlPerfilUsuario";
+        this.pnlPerfilUsuario.Padding = new System.Windows.Forms.Padding(12, 8, 12, 8);
+        this.pnlPerfilUsuario.Size = new System.Drawing.Size(220, 70);
+        this.pnlPerfilUsuario.TabIndex = 8;
+
+        //
+        // FOTO DE PERFIL
+        //
+        this.picFotoPerfil.Location = new System.Drawing.Point(12, 12);
+        this.picFotoPerfil.Name = "picFotoPerfil";
+        this.picFotoPerfil.Size = new System.Drawing.Size(45, 45);
+        this.picFotoPerfil.TabIndex = 0;
+
+        //
+        // NOMBRE DE USUARIO
+        //
+        this.lblNombreUsuario.AutoEllipsis = true;
+        this.lblNombreUsuario.AutoSize = false;
+        this.lblNombreUsuario.Depth = 0;
+        this.lblNombreUsuario.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
+        this.lblNombreUsuario.Location = new System.Drawing.Point(68, 10);
+        this.lblNombreUsuario.MouseState = MaterialSkin.MouseState.HOVER;
+        this.lblNombreUsuario.Name = "lblNombreUsuario";
+        this.lblNombreUsuario.Size = new System.Drawing.Size(140, 22);
+        this.lblNombreUsuario.TabIndex = 1;
+        this.lblNombreUsuario.Text = "Usuario";
+
+        //
+        // ETIQUETA DE USUARIO
+        //
+        this.lblTagUsuario.AutoEllipsis = true;
+        this.lblTagUsuario.AutoSize = false;
+        this.lblTagUsuario.Depth = 0;
+        this.lblTagUsuario.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
+        this.lblTagUsuario.Location = new System.Drawing.Point(68, 34);
+        this.lblTagUsuario.MouseState = MaterialSkin.MouseState.HOVER;
+        this.lblTagUsuario.Name = "lblTagUsuario";
+        this.lblTagUsuario.Size = new System.Drawing.Size(140, 20);
+        this.lblTagUsuario.TabIndex = 2;
+        this.lblTagUsuario.Text = "@usuario · normal";
 
         // 
         // PANEL CONTENEDOR PRINCIPAL (pnlContenido)
@@ -237,5 +292,9 @@ partial class FrmInicio
     private MaterialSkin.Controls.MaterialButton btnEditoriales;
     private MaterialSkin.Controls.MaterialButton btnAyuda;
     private MaterialSkin.Controls.MaterialButton btnCerrarSesion;
+    private System.Windows.Forms.Panel pnlPerfilUsuario;
+    private Sistema_Biblioteca.Controles.picFotoPerfilCircular picFotoPerfil;
+    private MaterialSkin.Controls.MaterialLabel lblNombreUsuario;
+    private MaterialSkin.Controls.MaterialLabel lblTagUsuario;
     private System.Windows.Forms.Panel pnlContenido;
 }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using Sistema_Biblioteca.Data;
 using Sistema_Biblioteca.Modelos;
 
@@ -9,7 +10,7 @@ public static class LibrosControlador
 {
     public static List<LibrosModelo> GetAll()
     {
-        using var context = new LibraryContext();
-        return context.Libros.ToList();
+        using var context = LibraryContextFactory.Create();
+        return context.Libros.AsNoTracking().ToList();
     }
 }

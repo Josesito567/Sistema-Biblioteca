@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using Sistema_Biblioteca.Data;
 using Sistema_Biblioteca.Modelos;
 
@@ -9,7 +10,7 @@ public static class CatalogoLibrosControlador
 {
     public static List<CatalogoLibrosListadoModelo> GetAll()
     {
-        using var context = new LibraryContext();
+        using var context = LibraryContextFactory.Create();
 
         return (
             from catalogo in context.CatalogoLibros
@@ -27,19 +28,27 @@ public static class CatalogoLibrosControlador
                 estado = catalogo.estado,
                 fecha_registro = catalogo.fecha_registro
             }
-        ).ToList();
+        ).AsNoTracking().ToList();
+    }
+
+    public static bool ExisteCodigo(string codigo, int idExcluir = 0)
+    {
+        using var context = LibraryContextFactory.Create();
+        return context.CatalogoLibros.AsNoTracking().Any(catalogo =>
+            catalogo.id_catalogolibros != idExcluir &&
+            catalogo.codigo_ejemplar == codigo);
     }
 
     public static void Create(CatalogoLibrosModelo catalogo)
     {
-        using var context = new LibraryContext();
+        using var context = LibraryContextFactory.Create();
         context.CatalogoLibros.Add(catalogo);
         context.SaveChanges();
     }
 
     public static void Update(CatalogoLibrosModelo catalogo)
     {
-        using var context = new LibraryContext();
+        using var context = LibraryContextFactory.Create();
         context.CatalogoLibros.Update(catalogo);
         context.SaveChanges();
     }

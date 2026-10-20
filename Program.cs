@@ -2,6 +2,7 @@ namespace Sistema_Biblioteca;
 
 using System;
 using System.Windows.Forms;
+using Sistema_Biblioteca.Data;
 using Sistema_Biblioteca.Vistas.Autenticacion;
 using Sistema_Biblioteca.Vistas.Inicio;
 
@@ -11,6 +12,7 @@ static class Program
     static void Main()
     {
         ApplicationConfiguration.Initialize();
+        UsuariosSeeder.Seed();
 
         while (true)
         {
@@ -22,10 +24,15 @@ static class Program
                 {
                     return;
                 }
-            }
 
-            using var inicio = new FrmInicio();
-            inicio.ShowDialog();
+                using var inicio = new FrmInicio(login.UsuarioActual);
+                var resultadoInicio = inicio.ShowDialog();
+
+                if (resultadoInicio != DialogResult.OK)
+                {
+                    return;
+                }
+            }
         }
     }
 }

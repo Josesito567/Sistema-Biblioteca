@@ -34,6 +34,7 @@ partial class FrmLogin
         txtCorreo = new MaterialSkin.Controls.MaterialTextBox2();
         txtContrasena = new MaterialSkin.Controls.MaterialTextBox2();
         btnIngresar = new MaterialSkin.Controls.MaterialButton();
+        btnRegistrarse = new MaterialSkin.Controls.MaterialButton();
         picLogo = new PictureBox();
         lnkContacto = new LinkLabel();
         pnlFondo.SuspendLayout();
@@ -60,6 +61,7 @@ partial class FrmLogin
         cardLogin.Controls.Add(txtCorreo);
         cardLogin.Controls.Add(txtContrasena);
         cardLogin.Controls.Add(btnIngresar);
+        cardLogin.Controls.Add(btnRegistrarse);
         cardLogin.Depth = 0;
         cardLogin.ForeColor = Color.FromArgb(222, 0, 0, 0);
         cardLogin.Location = new Point(26, 20);
@@ -67,7 +69,7 @@ partial class FrmLogin
         cardLogin.MouseState = MaterialSkin.MouseState.HOVER;
         cardLogin.Name = "cardLogin";
         cardLogin.Padding = new Padding(14);
-        cardLogin.Size = new Size(350, 270);
+        cardLogin.Size = new Size(350, 300);
         cardLogin.TabIndex = 1;
         // 
         // lblTituloLogin
@@ -92,13 +94,14 @@ partial class FrmLogin
         txtCorreo.Depth = 0;
         txtCorreo.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
         txtCorreo.HideSelection = true;
-        txtCorreo.Hint = "Correo Electrónico";
+        txtCorreo.Hint = "Usuario";
         txtCorreo.LeadingIcon = null;
         txtCorreo.Location = new Point(25, 65);
         txtCorreo.MaxLength = 32767;
         txtCorreo.MouseState = MaterialSkin.MouseState.OUT;
         txtCorreo.Name = "txtCorreo";
         txtCorreo.PasswordChar = '\0';
+        txtCorreo.PrefixSuffixText = null;
         txtCorreo.ReadOnly = false;
         txtCorreo.RightToLeft = RightToLeft.No;
         txtCorreo.SelectedText = "";
@@ -107,7 +110,7 @@ partial class FrmLogin
         txtCorreo.ShortcutsEnabled = true;
         txtCorreo.Size = new Size(300, 48);
         txtCorreo.TabIndex = 1;
-        txtCorreo.TabStop = false;
+        txtCorreo.TabStop = true;
         txtCorreo.TextAlign = HorizontalAlignment.Left;
         txtCorreo.TrailingIcon = null;
         txtCorreo.UseSystemPasswordChar = false;
@@ -127,6 +130,7 @@ partial class FrmLogin
         txtContrasena.MouseState = MaterialSkin.MouseState.OUT;
         txtContrasena.Name = "txtContrasena";
         txtContrasena.PasswordChar = '●';
+        txtContrasena.PrefixSuffixText = null;
         txtContrasena.ReadOnly = false;
         txtContrasena.RightToLeft = RightToLeft.No;
         txtContrasena.SelectedText = "";
@@ -135,7 +139,7 @@ partial class FrmLogin
         txtContrasena.ShortcutsEnabled = true;
         txtContrasena.Size = new Size(300, 48);
         txtContrasena.TabIndex = 2;
-        txtContrasena.TabStop = false;
+        txtContrasena.TabStop = true;
         txtContrasena.TextAlign = HorizontalAlignment.Left;
         txtContrasena.TrailingIcon = null;
         txtContrasena.UseSystemPasswordChar = true;
@@ -145,6 +149,7 @@ partial class FrmLogin
         // 
         btnIngresar.AutoSize = false;
         btnIngresar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        btnIngresar.BackColor = Color.DarkBlue;
         btnIngresar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
         btnIngresar.Depth = 0;
         btnIngresar.HighEmphasis = true;
@@ -159,8 +164,27 @@ partial class FrmLogin
         btnIngresar.Text = "INICIAR SESIÓN";
         btnIngresar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
         btnIngresar.UseAccentColor = true;
-        btnIngresar.UseVisualStyleBackColor = true;
+        btnIngresar.UseVisualStyleBackColor = false;
         btnIngresar.Click += btnIngresar_Click;
+        //
+        // btnRegistrarse
+        //
+        btnRegistrarse.AutoSize = false;
+        btnRegistrarse.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        btnRegistrarse.Depth = 0;
+        btnRegistrarse.HighEmphasis = false;
+        btnRegistrarse.Icon = null;
+        btnRegistrarse.Location = new Point(25, 245);
+        btnRegistrarse.Margin = new Padding(4, 6, 4, 6);
+        btnRegistrarse.MouseState = MaterialSkin.MouseState.HOVER;
+        btnRegistrarse.Name = "btnRegistrarse";
+        btnRegistrarse.Size = new Size(300, 38);
+        btnRegistrarse.TabIndex = 4;
+        btnRegistrarse.Text = "CREAR NUEVO USUARIO";
+        btnRegistrarse.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+        btnRegistrarse.UseAccentColor = false;
+        btnRegistrarse.UseVisualStyleBackColor = true;
+        btnRegistrarse.Click += btnRegistrarse_Click;
         // 
         // picLogo
         // 
@@ -178,7 +202,7 @@ partial class FrmLogin
         lnkContacto.AutoSize = true;
         lnkContacto.BackColor = Color.Transparent;
         lnkContacto.LinkColor = Color.Blue;
-        lnkContacto.Location = new Point(26, 298);
+        lnkContacto.Location = new Point(26, 335);
         lnkContacto.Name = "lnkContacto";
         lnkContacto.Size = new Size(144, 15);
         lnkContacto.TabIndex = 3;
@@ -190,7 +214,7 @@ partial class FrmLogin
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(668, 391);
+        ClientSize = new Size(668, 430);
         Controls.Add(pnlFondo);
         Name = "FrmLogin";
         Text = "Sistema de Biblioteca - Colegio Tilburg";
@@ -212,6 +236,7 @@ partial class FrmLogin
     private MaterialSkin.Controls.MaterialTextBox2 txtCorreo;
     private MaterialSkin.Controls.MaterialTextBox2 txtContrasena;
     private MaterialSkin.Controls.MaterialButton btnIngresar;
+    private MaterialSkin.Controls.MaterialButton btnRegistrarse;
     private System.Windows.Forms.PictureBox picLogo;
     private System.Windows.Forms.LinkLabel lnkContacto;
 }

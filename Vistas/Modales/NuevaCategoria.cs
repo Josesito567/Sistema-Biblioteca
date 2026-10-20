@@ -53,7 +53,7 @@ namespace Sistema_Biblioteca.Vistas.Modales
             };
 
             // Valirdar que la categoría no exista ya en la base de datos
-            if (Sistema_Biblioteca.Controladores.CategoriasControlador.GetAll().Any(c => c.nombre.Equals(nuevaCategoria.nombre, StringComparison.OrdinalIgnoreCase)))
+            if (Sistema_Biblioteca.Controladores.CategoriasControlador.ExisteNombre(nuevaCategoria.nombre))
             {
                 MessageBox.Show("Ya existe una categoría con ese nombre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

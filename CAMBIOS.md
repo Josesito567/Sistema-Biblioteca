@@ -112,3 +112,14 @@ Cada formulario o control tiene sus archivos complementarios `.Designer.cs` y `.
 ## Estado de verificación
 
 La solución compila correctamente con el objetivo `net10.0-windows`.
+
+## Credenciales de prueba
+
+Estas cuentas se crean automáticamente por `UsuariosSeeder` cuando la tabla `Usuarios` está vacía:
+
+| Rol | Usuario | Contraseña | Permisos principales |
+|---|---|---|---|
+| Administrador | `admin` | `Admin123!` | Acceso a todas las secciones y administración de usuarios/roles. |
+| Usuario normal | `user` | `User123!` | Acceso a las secciones disponibles para usuarios normales. |
+
+El registro desde el login crea siempre usuarios con rol `normal`. Solo un usuario administrador puede cambiar el rol desde la sección `Administración`.

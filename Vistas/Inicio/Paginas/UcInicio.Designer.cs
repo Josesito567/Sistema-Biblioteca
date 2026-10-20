@@ -1,6 +1,6 @@
 namespace Sistema_Biblioteca.Vistas.Inicio.Paginas;
 
-partial class UcLibros
+partial class UcInicio
 {
     private System.ComponentModel.IContainer components = null;
 

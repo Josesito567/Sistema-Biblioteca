@@ -1,26 +1,23 @@
 ﻿using Sistema_Biblioteca.Data;
 using Sistema_Biblioteca.Modelos;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Policy;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace Sistema_Biblioteca.Controladores
+namespace Sistema_Biblioteca.Controladores;
+
+public static class EditorialesControlador
 {
-    public class EditorialesControlador
+    public static List<EditorialesModelo> GetAll()
     {
-        public static List<EditorialesModelo> GetAll()
-        {
-            using var context = new LibraryContext();
-            return context.Editoriales.ToList();
-        }
+        using var context = LibraryContextFactory.Create();
+        return context.Editoriales.AsNoTracking().ToList();
+    }
 
-        public static void Create(EditorialesModelo creareditorial)
-        {
-            using var context = new LibraryContext();
-            context.Editoriales.Add(creareditorial);
-            context.SaveChanges();
-        }
+    public static void Create(EditorialesModelo crearEditorial)
+    {
+        using var context = LibraryContextFactory.Create();
+        context.Editoriales.Add(crearEditorial);
+        context.SaveChanges();
     }
 }

@@ -12,6 +12,8 @@ public static class DataGridViewEstilo
         tabla.AllowUserToAddRows = false;
         tabla.AllowUserToDeleteRows = false;
         tabla.AllowUserToResizeRows = false;
+        tabla.AccessibleName = "Tabla de resultados";
+        tabla.AccessibleRole = AccessibleRole.Table;
         tabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         tabla.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
         tabla.BackgroundColor = Color.White;
@@ -46,6 +48,7 @@ public static class DataGridViewEstilo
         tabla.RowHeadersVisible = false;
         tabla.RowTemplate.Height = 38;
         tabla.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        tabla.StandardTab = true;
 
         tabla.AlternatingRowsDefaultCellStyle = new DataGridViewCellStyle
         {

@@ -70,9 +70,9 @@ namespace Sistema_Biblioteca.Vistas.Modales
             };
 
             // Valirdar que la categoría no exista ya en la base de datos
-            if (Sistema_Biblioteca.Controladores.AutoresControlador.GetAll().Exists(a =>
-                a.id_autores != (autorEditar?.id_autores ?? 0) &&
-                a.nombre.Equals(nuevoAutor.nombre, StringComparison.OrdinalIgnoreCase)))
+            if (Sistema_Biblioteca.Controladores.AutoresControlador.ExisteNombre(
+                nuevoAutor.nombre,
+                autorEditar?.id_autores ?? 0))
             {
                 MessageBox.Show("El autor ya existe en la base de datos.", "Autor existente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

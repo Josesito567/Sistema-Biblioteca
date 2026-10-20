@@ -11,12 +11,13 @@ namespace Sistema_Biblioteca.Data
         public DbSet<LibrosModelo> Libros { get; set; }
         public DbSet<CatalogoLibrosModelo> CatalogoLibros { get; set; }
         public DbSet<PrestamosModelo> Prestamos { get; set; }
+        public DbSet<UsuariosModelo> Usuarios { get; set; }
 
         protected override void OnConfiguring(
             DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
-                @"Server=14-LAB1PC4\TECHNOTEL;
+                @"Server=14-LAB1PC3\TECHNOTEL;
                   Database=sistema_biblioteca;
                   Trusted_Connection=True;
                   TrustServerCertificate=True;");

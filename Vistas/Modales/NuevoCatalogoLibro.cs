@@ -123,9 +123,9 @@ public sealed class NuevoCatalogoLibro : MaterialForm
         }
 
         var codigo = txtCodigoEjemplar.Text.Trim();
-        var existe = CatalogoLibrosControlador.GetAll().Any(c =>
-            c.id_catalogolibros != (registroEditar?.id_catalogolibros ?? 0) &&
-            c.codigo_ejemplar.Equals(codigo, StringComparison.OrdinalIgnoreCase));
+        var existe = CatalogoLibrosControlador.ExisteCodigo(
+            codigo,
+            registroEditar?.id_catalogolibros ?? 0);
 
         if (existe)
         {

@@ -6,9 +6,14 @@ using System.Drawing.Drawing2D;
 using System.IO;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using Sistema_Biblioteca.Modelos;
+using Sistema_Biblioteca.Servicios;
 
 public partial class FrmLogin : MaterialForm
 {
+    public string RolUsuario { get; private set; } = "normal";
+    public UsuarioSesion UsuarioActual { get; private set; } = new();
+
     public FrmLogin()
     {
         InitializeComponent();
@@ -17,6 +22,10 @@ public partial class FrmLogin : MaterialForm
         this.MaximizeBox = false;
         this.MinimizeBox = true;
         this.StartPosition = FormStartPosition.CenterParent;
+        this.AcceptButton = btnIngresar;
+        this.ActiveControl = txtCorreo;
+        this.KeyPreview = true;
+        this.KeyDown += FrmLogin_KeyDown;
 
         var materialSkinManager = MaterialSkinManager.Instance;
         materialSkinManager.AddFormToManage(this);
@@ -29,9 +38,16 @@ public partial class FrmLogin : MaterialForm
             Primary.Indigo800,   // Azul principal para la barra superior
             Primary.Indigo900,   // Azul marino más profundo
             Primary.Indigo500,   // Azul medio
-            Accent.Red700,       // Rojo de la antorcha para el botón "INGRESAR"
+            Accent.Blue700,      // Azul de la antorcha para el botón "INGRESAR"
             TextShade.WHITE      // Texto en blanco sobre el azul
         );
+    }
+
+    private void btnRegistrarse_Click(object? sender, EventArgs e)
+    {
+        using var registro = new FrmRegistroUsuario();
+        registro.ShowDialog(this);
+        txtCorreo.Focus();
     }
 
     private void FrmLogin_Load(object sender, EventArgs e)
@@ -46,7 +62,7 @@ public partial class FrmLogin : MaterialForm
         // Cargar el icono inicial
         if (File.Exists(rutaOjoCerrado))
         {
-            txtContrasena.TrailingIcon = Image.FromFile(rutaOjoCerrado);
+            txtContrasena.TrailingIcon = CargarIcono(rutaOjoCerrado);
         }
 
         // Alternar la visibilidad de la contraseña
@@ -57,14 +73,41 @@ public partial class FrmLogin : MaterialForm
             if (txtContrasena.UseSystemPasswordChar)
             {
                 if (File.Exists(rutaOjoCerrado))
-                    txtContrasena.TrailingIcon = Image.FromFile(rutaOjoCerrado);
+                    txtContrasena.TrailingIcon = CargarIcono(rutaOjoCerrado);
             }
             else
             {
                 if (File.Exists(rutaOjoAbierto))
-                    txtContrasena.TrailingIcon = Image.FromFile(rutaOjoAbierto);
+                    txtContrasena.TrailingIcon = CargarIcono(rutaOjoAbierto);
             }
         };
+    }
+
+    private static Image CargarIcono(string ruta)
+    {
+        using var imagen = Image.FromFile(ruta);
+        return new Bitmap(imagen);
+    }
+
+    private void FrmLogin_KeyDown(object? sender, KeyEventArgs e)
+    {
+        if (e.KeyCode != Keys.Enter)
+        {
+            return;
+        }
+
+        if (txtCorreo.ContainsFocus)
+        {
+            txtContrasena.Focus();
+            e.Handled = true;
+            e.SuppressKeyPress = true;
+        }
+        else if (txtContrasena.ContainsFocus)
+        {
+            btnIngresar.PerformClick();
+            e.Handled = true;
+            e.SuppressKeyPress = true;
+        }
     }
 
     private void cardLogin_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
@@ -83,7 +126,7 @@ public partial class FrmLogin : MaterialForm
     private void btnIngresar_Click(object sender, System.EventArgs e)
     {
         string correo = txtCorreo.Text.Trim();
-        string contraseña = txtContrasena.Text.Trim();
+        string contraseña = txtContrasena.Text;
 
         if (string.IsNullOrWhiteSpace(correo) || string.IsNullOrWhiteSpace(contraseña))
         {
@@ -93,8 +136,13 @@ public partial class FrmLogin : MaterialForm
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning
             );
+
+            (string.IsNullOrWhiteSpace(correo) ? txtCorreo : txtContrasena).Focus();
             return; // Detenemos la ejecución aquí
         }
+
+        UsuarioActual = UsuarioSesionServicio.CrearSesion(correo);
+        RolUsuario = UsuarioActual.Rol;
 
         // 3. Si ambos campos tienen texto, otorgamos el OK y cerramos
         this.DialogResult = DialogResult.OK;

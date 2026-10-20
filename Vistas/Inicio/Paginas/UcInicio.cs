@@ -3,9 +3,9 @@ namespace Sistema_Biblioteca.Vistas.Inicio.Paginas;
 using MaterialSkin.Controls;
 using System.Windows.Forms;
 
-public partial class UcLibros : UserControl
+public partial class UcInicio : UserControl
 {
-    public UcLibros()
+    public UcInicio()
     {
         InitializeComponent();
 
