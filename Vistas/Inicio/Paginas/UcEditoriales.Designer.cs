@@ -50,33 +50,6 @@ partial class UcEditoriales
         lblDescripcion.TabIndex = 0;
         lblDescripcion.Text = "Panel de gestión de editoriales.";
         // 
-        // txtBuscar
-        // 
-        txtBuscar.Location = new Point(25, 87);
-        txtBuscar.Name = "txtBuscar";
-        txtBuscar.Size = new Size(280, 48);
-        txtBuscar.TabIndex = 4;
-        // 
-        // btnBuscar
-        // 
-        btnBuscar.Location = new Point(320, 93);
-        btnBuscar.Name = "btnBuscar";
-        btnBuscar.Size = new Size(105, 36);
-        btnBuscar.TabIndex = 5;
-        btnBuscar.Text = "Buscar";
-        btnBuscar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-        btnBuscar.Click += btnBuscar_Click;
-        // 
-        // btnRefrescar
-        // 
-        btnRefrescar.Location = new Point(435, 93);
-        btnRefrescar.Name = "btnRefrescar";
-        btnRefrescar.Size = new Size(105, 36);
-        btnRefrescar.TabIndex = 6;
-        btnRefrescar.Text = "Refrescar";
-        btnRefrescar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
-        btnRefrescar.Click += btnRefrescar_Click;
-        // 
         // dgvEditoriales
         // 
         dgvEditoriales.AccessibleDescription = "dgvEditoriales";
@@ -87,6 +60,7 @@ partial class UcEditoriales
         dgvEditoriales.Name = "dgvEditoriales";
         dgvEditoriales.Size = new Size(1202, 416);
         dgvEditoriales.TabIndex = 2;
+        dgvEditoriales.CellContentClick += dgvEditoriales_CellContentClick;
         // 
         // btnEdCrear
         // 
@@ -109,6 +83,72 @@ partial class UcEditoriales
         btnEdCrear.UseAccentColor = false;
         btnEdCrear.UseVisualStyleBackColor = true;
         btnEdCrear.Click += btnEdCrear_Click;
+        // 
+        // txtBuscar
+        // 
+        txtBuscar.AnimateReadOnly = false;
+        txtBuscar.BackgroundImageLayout = ImageLayout.None;
+        txtBuscar.CharacterCasing = CharacterCasing.Normal;
+        txtBuscar.Depth = 0;
+        txtBuscar.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+        txtBuscar.HideSelection = true;
+        txtBuscar.LeadingIcon = null;
+        txtBuscar.Location = new Point(25, 87);
+        txtBuscar.MaxLength = 32767;
+        txtBuscar.MouseState = MaterialSkin.MouseState.OUT;
+        txtBuscar.Name = "txtBuscar";
+        txtBuscar.PasswordChar = '\0';
+        txtBuscar.PrefixSuffixText = null;
+        txtBuscar.ReadOnly = false;
+        txtBuscar.RightToLeft = RightToLeft.No;
+        txtBuscar.SelectedText = "";
+        txtBuscar.SelectionLength = 0;
+        txtBuscar.SelectionStart = 0;
+        txtBuscar.ShortcutsEnabled = true;
+        txtBuscar.Size = new Size(280, 48);
+        txtBuscar.TabIndex = 4;
+        txtBuscar.TabStop = false;
+        txtBuscar.TextAlign = HorizontalAlignment.Left;
+        txtBuscar.TrailingIcon = null;
+        txtBuscar.UseSystemPasswordChar = false;
+        // 
+        // btnBuscar
+        // 
+        btnBuscar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        btnBuscar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+        btnBuscar.Depth = 0;
+        btnBuscar.HighEmphasis = true;
+        btnBuscar.Icon = null;
+        btnBuscar.Location = new Point(320, 93);
+        btnBuscar.Margin = new Padding(4, 6, 4, 6);
+        btnBuscar.MouseState = MaterialSkin.MouseState.HOVER;
+        btnBuscar.Name = "btnBuscar";
+        btnBuscar.NoAccentTextColor = Color.Empty;
+        btnBuscar.Size = new Size(77, 36);
+        btnBuscar.TabIndex = 5;
+        btnBuscar.Text = "Buscar";
+        btnBuscar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+        btnBuscar.UseAccentColor = false;
+        btnBuscar.Click += btnBuscar_Click;
+        // 
+        // btnRefrescar
+        // 
+        btnRefrescar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        btnRefrescar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+        btnRefrescar.Depth = 0;
+        btnRefrescar.HighEmphasis = true;
+        btnRefrescar.Icon = null;
+        btnRefrescar.Location = new Point(435, 93);
+        btnRefrescar.Margin = new Padding(4, 6, 4, 6);
+        btnRefrescar.MouseState = MaterialSkin.MouseState.HOVER;
+        btnRefrescar.Name = "btnRefrescar";
+        btnRefrescar.NoAccentTextColor = Color.Empty;
+        btnRefrescar.Size = new Size(102, 36);
+        btnRefrescar.TabIndex = 6;
+        btnRefrescar.Text = "Refrescar";
+        btnRefrescar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+        btnRefrescar.UseAccentColor = false;
+        btnRefrescar.Click += btnRefrescar_Click;
         // 
         // UcEditoriales
         // 
