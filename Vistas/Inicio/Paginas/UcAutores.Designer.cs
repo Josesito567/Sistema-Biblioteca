@@ -1,3 +1,5 @@
+using Sistema_Biblioteca.Controladores;
+
 namespace Sistema_Biblioteca.Vistas.Inicio.Paginas;
 
 partial class UcAutores
@@ -50,33 +52,6 @@ partial class UcAutores
         lblDescripcion.TabIndex = 3;
         lblDescripcion.Text = "Panel de gestión de autores.";
         // 
-        // txtBuscar
-        // 
-        txtBuscar.Location = new Point(25, 87);
-        txtBuscar.Name = "txtBuscar";
-        txtBuscar.Size = new Size(280, 48);
-        txtBuscar.TabIndex = 6;
-        // 
-        // btnBuscar
-        // 
-        btnBuscar.Location = new Point(320, 93);
-        btnBuscar.Name = "btnBuscar";
-        btnBuscar.Size = new Size(105, 36);
-        btnBuscar.TabIndex = 7;
-        btnBuscar.Text = "Buscar";
-        btnBuscar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-        btnBuscar.Click += btnBuscar_Click;
-        // 
-        // btnRefrescar
-        // 
-        btnRefrescar.Location = new Point(435, 93);
-        btnRefrescar.Name = "btnRefrescar";
-        btnRefrescar.Size = new Size(105, 36);
-        btnRefrescar.TabIndex = 8;
-        btnRefrescar.Text = "Refrescar";
-        btnRefrescar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
-        btnRefrescar.Click += btnRefrescar_Click;
-        // 
         // dgvAutores
         // 
         dgvAutores.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -86,6 +61,7 @@ partial class UcAutores
         dgvAutores.Name = "dgvAutores";
         dgvAutores.Size = new Size(1774, 808);
         dgvAutores.TabIndex = 2;
+        dgvAutores.CellContentClick += dgvAutores_CellContentClick;
         // 
         // btnAuCrear
         // 
@@ -107,6 +83,72 @@ partial class UcAutores
         btnAuCrear.UseAccentColor = false;
         btnAuCrear.UseVisualStyleBackColor = true;
         btnAuCrear.Click += btnAuCrear_Click;
+        // 
+        // txtBuscar
+        // 
+        txtBuscar.AnimateReadOnly = false;
+        txtBuscar.BackgroundImageLayout = ImageLayout.None;
+        txtBuscar.CharacterCasing = CharacterCasing.Normal;
+        txtBuscar.Depth = 0;
+        txtBuscar.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+        txtBuscar.HideSelection = true;
+        txtBuscar.LeadingIcon = null;
+        txtBuscar.Location = new Point(25, 87);
+        txtBuscar.MaxLength = 32767;
+        txtBuscar.MouseState = MaterialSkin.MouseState.OUT;
+        txtBuscar.Name = "txtBuscar";
+        txtBuscar.PasswordChar = '\0';
+        txtBuscar.PrefixSuffixText = null;
+        txtBuscar.ReadOnly = false;
+        txtBuscar.RightToLeft = RightToLeft.No;
+        txtBuscar.SelectedText = "";
+        txtBuscar.SelectionLength = 0;
+        txtBuscar.SelectionStart = 0;
+        txtBuscar.ShortcutsEnabled = true;
+        txtBuscar.Size = new Size(280, 48);
+        txtBuscar.TabIndex = 6;
+        txtBuscar.TabStop = false;
+        txtBuscar.TextAlign = HorizontalAlignment.Left;
+        txtBuscar.TrailingIcon = null;
+        txtBuscar.UseSystemPasswordChar = false;
+        // 
+        // btnBuscar
+        // 
+        btnBuscar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        btnBuscar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+        btnBuscar.Depth = 0;
+        btnBuscar.HighEmphasis = true;
+        btnBuscar.Icon = null;
+        btnBuscar.Location = new Point(320, 93);
+        btnBuscar.Margin = new Padding(4, 6, 4, 6);
+        btnBuscar.MouseState = MaterialSkin.MouseState.HOVER;
+        btnBuscar.Name = "btnBuscar";
+        btnBuscar.NoAccentTextColor = Color.Empty;
+        btnBuscar.Size = new Size(77, 36);
+        btnBuscar.TabIndex = 7;
+        btnBuscar.Text = "Buscar";
+        btnBuscar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+        btnBuscar.UseAccentColor = false;
+        btnBuscar.Click += btnBuscar_Click;
+        // 
+        // btnRefrescar
+        // 
+        btnRefrescar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        btnRefrescar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+        btnRefrescar.Depth = 0;
+        btnRefrescar.HighEmphasis = true;
+        btnRefrescar.Icon = null;
+        btnRefrescar.Location = new Point(435, 93);
+        btnRefrescar.Margin = new Padding(4, 6, 4, 6);
+        btnRefrescar.MouseState = MaterialSkin.MouseState.HOVER;
+        btnRefrescar.Name = "btnRefrescar";
+        btnRefrescar.NoAccentTextColor = Color.Empty;
+        btnRefrescar.Size = new Size(102, 36);
+        btnRefrescar.TabIndex = 8;
+        btnRefrescar.Text = "Refrescar";
+        btnRefrescar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+        btnRefrescar.UseAccentColor = false;
+        btnRefrescar.Click += btnRefrescar_Click;
         // 
         // UcAutores
         // 
@@ -131,4 +173,25 @@ partial class UcAutores
     private MaterialSkin.Controls.MaterialTextBox2 txtBuscar;
     private MaterialSkin.Controls.MaterialButton btnBuscar;
     private MaterialSkin.Controls.MaterialButton btnRefrescar;
+
+    private void dgvAutores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0 || dgvAutores.Columns[e.ColumnIndex].Name != "btnDelete") return;
+
+        int id = Convert.ToInt32(dgvAutores.Rows[e.RowIndex].Cells["id_autores"].Value);
+        string name = dgvAutores.Rows[e.RowIndex].Cells["nombre"].Value?.ToString() ?? "";
+
+        DialogResult result = MessageBox.Show($"¿Está seguro de eliminar el autor '{name}'?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+        if (result != DialogResult.Yes) return;
+
+        if (AutoresControlador.Delete(id, out string mensajeError))
+        {
+            MessageBox.Show($"Autor '{name}' eliminado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            CargarAutoresEnLaTabla();
+        }
+        else
+        {
+            MessageBox.Show(mensajeError, "Error al eliminar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
 }

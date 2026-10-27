@@ -35,4 +35,29 @@ public static class AutoresControlador
         context.Autores.Update(autor);
         context.SaveChanges();
     }
+
+    public static bool Delete(int id, out string mensajeError)
+    {
+        mensajeError = string.Empty;
+        using var context = LibraryContextFactory.Create();
+
+        var autor = context.Autores.Find(id);
+        if (autor == null)
+        {
+            mensajeError = "El autor especificado no existe.";
+            return false;
+        }
+
+        // Verifica si el autor tiene libros asociados
+        bool tieneLibros = context.Libros.Any(l => l.id_autores == id);
+        if (tieneLibros)
+        {
+            mensajeError = $"No se puede eliminar el autor '{autor.nombre}' porque tiene libros asociados.";
+            return false;
+        }
+
+        context.Autores.Remove(autor);
+        context.SaveChanges();
+        return true;
+    }
 }

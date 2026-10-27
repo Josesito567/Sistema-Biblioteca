@@ -52,4 +52,29 @@ public static class CatalogoLibrosControlador
         context.CatalogoLibros.Update(catalogo);
         context.SaveChanges();
     }
+
+    public static bool Delete(int id, out string mensajeError)
+    {
+        mensajeError = string.Empty;
+        using var context = LibraryContextFactory.Create();
+
+        var libro = context.Libros.Find(id);
+        if (libro == null)
+        {
+            mensajeError = "El libro especificado no existe.";
+            return false;
+        }
+
+        // Verifica si el libro está en algún préstamo activo/histórico
+        bool tienePrestamos = context.Prestamos.Any(p => p.id_catalogolibros == id);
+        if (tienePrestamos)
+        {
+            mensajeError = $"No se puede eliminar el libro '{libro.titulo}' porque tiene registros de préstamos asociados.";
+            return false;
+        }
+
+        context.Libros.Remove(libro);
+        context.SaveChanges();
+        return true;
+    }
 }

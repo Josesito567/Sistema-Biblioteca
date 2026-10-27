@@ -29,4 +29,29 @@ public static class CategoriasControlador
         context.Categorias.Add(categoria);
         context.SaveChanges();
     }
+
+    public static bool Delete(int id, out string mensajeError)
+    {
+        mensajeError = string.Empty;
+        using var context = LibraryContextFactory.Create();
+    
+        var categoria = context.Categorias.Find(id);
+        if (categoria == null)
+        {
+            mensajeError = "La categoría especificada no existe.";
+            return false;
+        }
+
+        // Verifica si hay libros usando esta categoría
+        bool tieneLibros = context.Libros.Any(l => l.id_categorias == id);
+        if (tieneLibros)
+        {
+            mensajeError = $"No se puede eliminar la categoría '{categoria.nombre}' porque contiene libros.";
+            return false;
+        }
+
+        context.Categorias.Remove(categoria);
+        context.SaveChanges();
+        return true;
+    }
 }

@@ -1,8 +1,9 @@
 namespace Sistema_Biblioteca.Vistas.Inicio.Paginas;
 
+using Sistema_Biblioteca.Controladores;
+using Sistema_Biblioteca.Estilos;
 using Sistema_Biblioteca.Modelos;
 using System.Windows.Forms;
-using Sistema_Biblioteca.Estilos;
 
 public partial class UcCatalogoLibros : UserControl
 {
@@ -13,6 +14,7 @@ public partial class UcCatalogoLibros : UserControl
         InitializeComponent();
         ControlesTablaEstilo.Aplicar(txtBuscar, btnBuscar, btnRefrescar);
         dgvCatalogoLibros.CellDoubleClick += dgvCatalogoLibros_CellDoubleClick;
+        dgvCatalogoLibros.CellContentClick += dgvCatalogoLibros_CellContentClick;
         CargarCatalogoEnLaTabla();
     }
 
@@ -20,7 +22,17 @@ public partial class UcCatalogoLibros : UserControl
     {
         catalogo = Sistema_Biblioteca.Controladores.CatalogoLibrosControlador.GetAll();
         AplicarFiltro();
-        DataGridViewEstilo.Aplicar(dgvCatalogoLibros, "id_catalogolibros", "id_libros");
+        DataGridViewEstilo.Aplicar(dgvCatalogoLibros, "id_catalogolibros", "id_libros"); 
+        if (!dgvCatalogoLibros.Columns.Contains("btnDelete"))
+        {
+            dgvCatalogoLibros.Columns.Add(new DataGridViewButtonColumn
+            {
+                Name = "btnDelete",
+                HeaderText = "",
+                Text = "Eliminar",
+                UseColumnTextForButtonValue = true
+            });
+        }
     }
 
     private void AplicarFiltro()
@@ -65,6 +77,27 @@ public partial class UcCatalogoLibros : UserControl
         if (modal.ShowDialog(this) == DialogResult.OK)
         {
             CargarCatalogoEnLaTabla();
+        }
+    }
+
+    private void dgvCatalogoLibros_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0 || dgvCatalogoLibros.Columns[e.ColumnIndex].Name != "btnDelete") return;
+
+        int id = Convert.ToInt32(dgvCatalogoLibros.Rows[e.RowIndex].Cells["id_catalogolibros"].Value);
+        string titulo = dgvCatalogoLibros.Rows[e.RowIndex].Cells["titulo"].Value?.ToString() ?? "";
+
+        DialogResult result = MessageBox.Show($"¿Está seguro de eliminar el libro '{titulo}'?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+        if (result != DialogResult.Yes) return;
+
+        if (CatalogoLibrosControlador.Delete(id, out string mensajeError))
+        {
+            MessageBox.Show($"Libro '{titulo}' eliminado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            CargarCatalogoEnLaTabla();
+        }
+        else
+        {
+            MessageBox.Show(mensajeError, "Error al eliminar", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
